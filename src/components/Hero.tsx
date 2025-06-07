@@ -38,8 +38,7 @@ const Hero = () => {
             
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-zenblock-white text-zenblock-white hover:bg-zenblock-white hover:text-zenblock-dark-blue text-base px-6 py-3 rounded-full font-semibold backdrop-blur-sm"
+              className="bg-zenblock-pharma-green text-zenblock-white hover:bg-zenblock-pharma-green/90 text-base px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Book a Demo
             </Button>

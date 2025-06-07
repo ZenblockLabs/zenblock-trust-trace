@@ -29,7 +29,6 @@ const About = () => {
   const milestones = [
     { year: "2024", title: "MVP Completed", description: "Successfully developed and tested our blockchain traceability platform" },
     { year: "2024", title: "Pilot Outreach", description: "Engaging with pharmaceutical companies across India and UAE" },
-    { year: "2024", title: "SINE Incubation", description: "Selected for prestigious SINE incubator program" },
     { year: "2025", title: "Regulatory Partnerships", description: "Building relationships with Tatmeen, FDA, and CDSCO" }
   ];
 
