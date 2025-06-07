@@ -71,7 +71,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="shadow-xl bg-zenblock-white">
+          <Card className="shadow-xl bg-zenblock-white border-zenblock-soft-violet">
             <CardHeader>
               <CardTitle className="text-2xl text-zenblock-primary-text">Send Us a Message</CardTitle>
             </CardHeader>
@@ -88,7 +88,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full"
+                    className="w-full border-zenblock-soft-violet focus:border-zenblock-electric-blue focus:ring-zenblock-electric-blue bg-zenblock-white"
                     placeholder="Your full name"
                   />
                 </div>
@@ -104,7 +104,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full"
+                    className="w-full border-zenblock-soft-violet focus:border-zenblock-electric-blue focus:ring-zenblock-electric-blue bg-zenblock-white"
                     placeholder="your.email@company.com"
                   />
                 </div>
@@ -119,7 +119,7 @@ const Contact = () => {
                     type="text"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full"
+                    className="w-full border-zenblock-soft-violet focus:border-zenblock-electric-blue focus:ring-zenblock-electric-blue bg-zenblock-white"
                     placeholder="Your company name"
                   />
                 </div>
@@ -135,7 +135,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full"
+                    className="w-full border-zenblock-soft-violet focus:border-zenblock-electric-blue focus:ring-zenblock-electric-blue bg-zenblock-white"
                     placeholder="Tell us about your supply chain challenges and how we can help..."
                   />
                 </div>
@@ -150,7 +150,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-6">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="card-hover bg-zenblock-white">
+              <Card key={index} className="card-hover bg-zenblock-white border-zenblock-soft-violet">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     {info.icon}
@@ -185,7 +185,7 @@ const Contact = () => {
             </div>
 
             {/* Additional Info */}
-            <Card className="bg-zenblock-soft-mint">
+            <Card className="bg-zenblock-soft-mint border-zenblock-soft-violet">
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold text-zenblock-primary-text mb-3">Why Partner With Us?</h3>
                 <ul className="space-y-2 text-zenblock-secondary-text">
