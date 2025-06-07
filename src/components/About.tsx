@@ -37,10 +37,10 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-zenblock-primary-text mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-[2rem] font-bold text-zenblock-primary-text mb-6">
             About Zenblock Labs
           </h2>
-          <p className="text-xl text-zenblock-secondary-text max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-[1.125rem] text-zenblock-secondary-text max-w-3xl mx-auto">
             Our vision is to ensure and assure that every business operates on trust. 
             We're solving the critical challenges of counterfeits, compliance gaps, 
             and supply chain fragmentation in regulated industries.
@@ -51,19 +51,19 @@ const About = () => {
         <div className="mb-16">
           <Card className="bg-zenblock-white shadow-lg border-l-4 border-l-zenblock-electric-blue">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-zenblock-primary-text mb-4">The Problem We Solve</h3>
+              <h3 className="text-2xl lg:text-[2rem] font-bold text-zenblock-primary-text mb-4">The Problem We Solve</h3>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="font-semibold text-zenblock-primary-text mb-2">Counterfeiting</h4>
-                  <p className="text-zenblock-secondary-text">$200B+ annual losses from fake pharmaceuticals globally</p>
+                  <h4 className="font-semibold text-zenblock-primary-text mb-2 text-[1rem]">Counterfeiting</h4>
+                  <p className="text-zenblock-secondary-text text-[1rem]">$200B+ annual losses from fake pharmaceuticals globally</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-zenblock-primary-text mb-2">Compliance Gaps</h4>
-                  <p className="text-zenblock-secondary-text">Complex regulatory requirements across multiple jurisdictions</p>
+                  <h4 className="font-semibold text-zenblock-primary-text mb-2 text-[1rem]">Compliance Gaps</h4>
+                  <p className="text-zenblock-secondary-text text-[1rem]">Complex regulatory requirements across multiple jurisdictions</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-zenblock-primary-text mb-2">Fragmentation</h4>
-                  <p className="text-zenblock-secondary-text">Lack of visibility and coordination across supply chain partners</p>
+                  <h4 className="font-semibold text-zenblock-primary-text mb-2 text-[1rem]">Fragmentation</h4>
+                  <p className="text-zenblock-secondary-text text-[1rem]">Lack of visibility and coordination across supply chain partners</p>
                 </div>
               </div>
             </CardContent>
@@ -72,7 +72,7 @@ const About = () => {
 
         {/* Core Values */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-zenblock-primary-text mb-12">Our Core Values</h3>
+          <h3 className="text-3xl lg:text-[2rem] font-bold text-center text-zenblock-primary-text mb-12">Our Core Values</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <Card key={index} className="text-center card-hover bg-zenblock-white">
@@ -80,8 +80,8 @@ const About = () => {
                   <div className="flex justify-center mb-4">
                     {value.icon}
                   </div>
-                  <h4 className="text-xl font-semibold text-zenblock-primary-text mb-2">{value.title}</h4>
-                  <p className="text-zenblock-secondary-text">{value.description}</p>
+                  <h4 className="text-xl font-semibold text-zenblock-primary-text mb-2 text-[1rem]">{value.title}</h4>
+                  <p className="text-zenblock-secondary-text text-[1rem]">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -90,7 +90,7 @@ const About = () => {
 
         {/* Milestones */}
         <div>
-          <h3 className="text-3xl font-bold text-center text-zenblock-primary-text mb-12">Our Journey</h3>
+          <h3 className="text-3xl lg:text-[2rem] font-bold text-center text-zenblock-primary-text mb-12">Our Journey</h3>
           <div className="space-y-6">
             {milestones.map((milestone, index) => (
               <div key={index} className="flex items-start space-x-4 animate-slide-in" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -98,8 +98,8 @@ const About = () => {
                   {milestone.year}
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-zenblock-primary-text mb-1">{milestone.title}</h4>
-                  <p className="text-zenblock-secondary-text">{milestone.description}</p>
+                  <h4 className="text-xl font-semibold text-zenblock-primary-text mb-1 text-[1rem]">{milestone.title}</h4>
+                  <p className="text-zenblock-secondary-text text-[1rem]">{milestone.description}</p>
                 </div>
               </div>
             ))}

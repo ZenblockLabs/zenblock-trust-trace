@@ -39,26 +39,25 @@ const Footer = () => {
             <div className="text-2xl font-bold text-zenblock-white mb-4">
               Zenblock Labs
             </div>
-            <p className="text-zenblock-inverse-text/80 mb-6 max-w-md">
+            <p className="text-zenblock-inverse-text/80 mb-6 max-w-md text-[1rem]">
               Enabling trust in regulated supply chains through blockchain technology. 
               Building the future of pharmaceutical traceability and compliance.
             </p>
             <div className="text-sm text-zenblock-inverse-text/70">
-              <p>SINE IIT Bombay Incubator</p>
-              <p>Mumbai, India</p>
+              <p>Hyderabad, India</p>
               <p className="mt-2">info@zenblocklabs.com</p>
             </div>
           </div>
 
           {/* Footer Links */}
           <div>
-            <h3 className="text-zenblock-white font-semibold mb-4">Company</h3>
+            <h3 className="text-zenblock-white font-semibold mb-4 text-[1rem]">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
                   <a 
                     href={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200"
+                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
                   >
                     {link.name}
                   </a>
@@ -68,13 +67,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-zenblock-white font-semibold mb-4">Product</h3>
+            <h3 className="text-zenblock-white font-semibold mb-4 text-[1rem]">Product</h3>
             <ul className="space-y-2">
               {footerLinks.product.map((link, index) => (
                 <li key={index}>
                   <a 
                     href={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200"
+                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
                   >
                     {link.name}
                   </a>
@@ -84,13 +83,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-zenblock-white font-semibold mb-4">Resources</h3>
+            <h3 className="text-zenblock-white font-semibold mb-4 text-[1rem]">Resources</h3>
             <ul className="space-y-2">
               {footerLinks.resources.map((link, index) => (
                 <li key={index}>
                   <a 
                     href={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200"
+                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
                   >
                     {link.name}
                   </a>
@@ -100,13 +99,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-zenblock-white font-semibold mb-4">Legal</h3>
+            <h3 className="text-zenblock-white font-semibold mb-4 text-[1rem]">Legal</h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
                   <a 
                     href={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200"
+                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
                   >
                     {link.name}
                   </a>
@@ -120,28 +119,28 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-zenblock-inverse-text/70 text-sm">
+          <div className="text-zenblock-inverse-text/70 text-[0.875rem]">
             © 2024 Zenblock Labs. All rights reserved.
           </div>
           
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a 
               href="#" 
-              className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200"
+              className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
               aria-label="LinkedIn"
             >
               LinkedIn
             </a>
             <a 
               href="#" 
-              className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200"
+              className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
               aria-label="Twitter"
             >
               Twitter
             </a>
             <a 
               href="#" 
-              className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200"
+              className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
               aria-label="GitHub"
             >
               GitHub

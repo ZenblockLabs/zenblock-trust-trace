@@ -33,7 +33,7 @@ const Navigation = () => {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-zenblock-secondary-text hover:text-zenblock-electric-blue px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-zenblock-secondary-text hover:text-zenblock-electric-blue px-3 py-2 rounded-md text-[1rem] font-medium transition-colors duration-200"
                 >
                   {item.label}
                 </a>
@@ -43,7 +43,7 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white">
+            <Button className="bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]">
               Book a Demo
             </Button>
           </div>
@@ -68,14 +68,14 @@ const Navigation = () => {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-zenblock-secondary-text hover:text-zenblock-electric-blue block px-3 py-2 rounded-md text-base font-medium"
+                  className="text-zenblock-secondary-text hover:text-zenblock-electric-blue block px-3 py-2 rounded-md text-[1rem] font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
               <div className="pt-2">
-                <Button className="w-full bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white">
+                <Button className="w-full bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]">
                   Book a Demo
                 </Button>
               </div>
