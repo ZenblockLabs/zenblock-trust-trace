@@ -70,7 +70,7 @@ const ApiDocs = () => {
                   <div className="flex items-center gap-4 mb-4">
                     <span className={`px-3 py-1 rounded text-sm font-medium ${
                       endpoint.method === 'GET' 
-                        ? 'bg-green-100 text-green-800'
+                        ? 'bg-zenblock-soft-mint text-zenblock-pharma-green'
                         : endpoint.method === 'POST'
                         ? 'bg-blue-100 text-blue-800' 
                         : 'bg-orange-100 text-orange-800'
@@ -85,7 +85,7 @@ const ApiDocs = () => {
                     <ul className="space-y-1">
                       {endpoint.parameters.map((param, idx) => (
                         <li key={idx} className="text-zenblock-secondary-text">
-                          <code className="text-sm bg-gray-100 px-2 py-1 rounded">{param}</code>
+                          <code className="text-sm bg-zenblock-soft-violet px-2 py-1 rounded">{param}</code>
                         </li>
                       ))}
                     </ul>

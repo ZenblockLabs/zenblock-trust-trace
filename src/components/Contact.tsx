@@ -1,228 +1,174 @@
-
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Calendar } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
     toast({
       title: "Message Sent!",
       description: "Thank you for your interest. We'll be in touch soon.",
+      className: "bg-zenblock-soft-mint border-zenblock-pharma-green text-zenblock-primary-text",
     });
+    
     setFormData({ name: "", email: "", company: "", message: "" });
+    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
+    setFormData(prev => ({
+      ...prev,
       [e.target.name]: e.target.value
-    });
+    }));
   };
 
-  const handleScheduleDemo = () => {
-    // Scroll to top of contact form
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleWhatsApp = () => {
-    const phoneNumber = "919059392438";
-    const message = "Hi! I'm interested in learning more about Zenblock Labs' blockchain solutions for supply chain traceability.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
-  const contactInfo = [
-    {
-      icon: <MapPin className="w-6 h-6 text-zenblock-electric-blue" />,
-      title: "Headquarters",
-      details: ["Hyderabad, India"]
-    },
-    {
-      icon: <Phone className="w-6 h-6 text-zenblock-electric-blue" />,
-      title: "Phone",
-      details: ["+91 905 939 2438", "Available 9 AM - 6 PM IST"]
-    },
-    {
-      icon: <Mail className="w-6 h-6 text-zenblock-electric-blue" />,
-      title: "Email",
-      details: ["info@zenblocklabs.com", "partnerships@zenblocklabs.com"]
-    },
-    {
-      icon: <Calendar className="w-6 h-6 text-zenblock-electric-blue" />,
-      title: "Book a Call",
-      details: ["Schedule a demo", "Free consultation available"]
-    }
-  ];
+  if (isSubmitting) {
+    return (
+      <section id="contact" className="py-20 bg-zenblock-soft-mint">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-center min-h-[400px]">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zenblock-electric-blue mb-4"></div>
+            <p className="text-zenblock-primary-text text-lg">Sending your message...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
-    <section id="contact" className="py-20 bg-zenblock-white">
+    <section id="contact" className="py-20 bg-zenblock-soft-mint">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl lg:text-[2rem] font-bold text-zenblock-primary-text mb-6">
-            Get In Touch
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-zenblock-primary-text mb-6">
+            Contact Us
           </h2>
-          <p className="text-lg md:text-xl lg:text-[1.125rem] text-zenblock-secondary-text max-w-3xl mx-auto">
-            Ready to transform your supply chain? Let's discuss how Zenblock Labs 
-            can help you build trust and transparency in your operations.
+          <p className="text-xl text-zenblock-secondary-text max-w-3xl mx-auto">
+            We're here to help. Get in touch with our team to discuss your pharmaceutical supply chain needs.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="shadow-xl bg-zenblock-white border-zenblock-soft-violet">
-            <CardHeader>
-              <CardTitle className="text-2xl text-zenblock-primary-text">Send Us a Message</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-zenblock-primary-text mb-1">
-                    Full Name *
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full border-zenblock-soft-violet focus:border-zenblock-electric-blue focus:ring-zenblock-electric-blue bg-zenblock-white"
-                    placeholder="Your full name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-zenblock-primary-text mb-1">
-                    Email Address *
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full border-zenblock-soft-violet focus:border-zenblock-electric-blue focus:ring-zenblock-electric-blue bg-zenblock-white"
-                    placeholder="your.email@company.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-zenblock-primary-text mb-1">
-                    Company/Organization
-                  </label>
-                  <Input
-                    id="company"
-                    name="company"
-                    type="text"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full border-zenblock-soft-violet focus:border-zenblock-electric-blue focus:ring-zenblock-electric-blue bg-zenblock-white"
-                    placeholder="Your company name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-zenblock-primary-text mb-1">
-                    Message *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={5}
-                    className="w-full border-zenblock-soft-violet focus:border-zenblock-electric-blue focus:ring-zenblock-electric-blue bg-zenblock-white"
-                    placeholder="Tell us about your supply chain challenges and how we can help..."
-                  />
-                </div>
-
-                <Button type="submit" className="w-full bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem] py-6">
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          <div>
+            <Card className="bg-zenblock-white">
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <Input 
+                      type="text" 
+                      name="name" 
+                      placeholder="Your Name" 
+                      value={formData.name} 
+                      onChange={handleChange} 
+                      required 
+                      className="bg-zenblock-soft-mint border-none text-zenblock-primary-text"
+                    />
+                  </div>
+                  <div>
+                    <Input 
+                      type="email" 
+                      name="email" 
+                      placeholder="Your Email" 
+                      value={formData.email} 
+                      onChange={handleChange} 
+                      required 
+                      className="bg-zenblock-soft-mint border-none text-zenblock-primary-text"
+                    />
+                  </div>
+                  <div>
+                    <Input 
+                      type="text" 
+                      name="company" 
+                      placeholder="Your Company" 
+                      value={formData.company} 
+                      onChange={handleChange} 
+                      className="bg-zenblock-soft-mint border-none text-zenblock-primary-text"
+                    />
+                  </div>
+                  <div>
+                    <Textarea 
+                      name="message" 
+                      placeholder="Your Message" 
+                      rows={4} 
+                      value={formData.message} 
+                      onChange={handleChange} 
+                      required 
+                      className="bg-zenblock-soft-mint border-none text-zenblock-primary-text resize-none"
+                    />
+                  </div>
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-zenblock-electric-blue text-zenblock-white hover:bg-zenblock-electric-blue/90"
+                    disabled={isSubmitting}
+                  >
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Contact Information */}
-          <div className="space-y-6">
-            {contactInfo.map((info, index) => (
-              <Card key={index} className="card-hover bg-zenblock-white border-zenblock-soft-violet">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    {info.icon}
-                    <div>
-                      <h3 className="text-lg font-semibold text-zenblock-primary-text mb-2">{info.title}</h3>
-                      {info.details.map((detail, dIndex) => (
-                        <p key={dIndex} className="text-zenblock-secondary-text text-[1rem]">{detail}</p>
-                      ))}
-                    </div>
+          <div>
+            <Card className="bg-zenblock-soft-mint">
+              <CardContent className="p-8 space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="rounded-full bg-zenblock-white p-2">
+                    <Phone className="w-6 h-6 text-zenblock-electric-blue" />
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                  <div>
+                    <h3 className="text-xl font-semibold text-zenblock-primary-text">Phone</h3>
+                    <p className="text-zenblock-secondary-text">+91 9876543210</p>
+                  </div>
+                </div>
 
-            {/* Quick Actions */}
-            <div className="space-y-4 pt-6">
-              <Button 
-                size="lg" 
-                onClick={handleScheduleDemo}
-                className="w-full bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]"
-              >
-                <Calendar className="mr-2" size={20} />
-                Schedule a Demo
-              </Button>
-              
-              <Button 
-                size="lg" 
-                onClick={handleWhatsApp}
-                className="w-full bg-zenblock-pharma-green hover:bg-zenblock-pharma-green/90 text-zenblock-white text-[1rem]"
-              >
-                <Phone className="mr-2" size={20} />
-                WhatsApp Us
-              </Button>
-            </div>
+                <div className="flex items-center gap-4">
+                  <div className="rounded-full bg-zenblock-white p-2">
+                    <Mail className="w-6 h-6 text-zenblock-electric-blue" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-zenblock-primary-text">Email</h3>
+                    <p className="text-zenblock-secondary-text">info@zenblocklabs.com</p>
+                  </div>
+                </div>
 
-            {/* Additional Info */}
-            <Card className="bg-zenblock-soft-mint border-zenblock-soft-violet">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-zenblock-primary-text mb-3">Why Partner With Us?</h3>
-                <ul className="space-y-2 text-zenblock-secondary-text">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-zenblock-electric-blue rounded-full"></div>
-                    <span className="text-[1rem]">Free initial consultation</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-zenblock-electric-blue rounded-full"></div>
-                    <span className="text-[1rem]">Custom solution design</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-zenblock-electric-blue rounded-full"></div>
-                    <span className="text-[1rem]">Regulatory compliance support</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-zenblock-electric-blue rounded-full"></div>
-                    <span className="text-[1rem]">24/7 technical support</span>
-                  </li>
-                </ul>
+                <div className="flex items-center gap-4">
+                  <div className="rounded-full bg-zenblock-white p-2">
+                    <MapPin className="w-6 h-6 text-zenblock-electric-blue" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-zenblock-primary-text">Address</h3>
+                    <p className="text-zenblock-secondary-text">Hyderabad, India</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="rounded-full bg-zenblock-white p-2">
+                    <MessageCircle className="w-6 h-6 text-zenblock-electric-blue" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-zenblock-primary-text">Support</h3>
+                    <p className="text-zenblock-secondary-text">Available 24/7</p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
