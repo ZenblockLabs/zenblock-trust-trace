@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Pill, Truck, Hospital, Smartphone, Shield, Search } from "lucide-react";
 
 const Solution = () => {
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const features = [
     {
       icon: <Pill className="w-8 h-8 text-zenblock-electric-blue" />,
@@ -127,7 +134,11 @@ const Solution = () => {
               <p className="text-zenblock-inverse-text/90 mb-6">
                 See how our blockchain solution can enhance trust and compliance in your operations.
               </p>
-              <Button size="lg" className="bg-zenblock-white text-zenblock-electric-blue hover:bg-zenblock-white/90">
+              <Button 
+                size="lg" 
+                onClick={scrollToContact}
+                className="bg-zenblock-white text-zenblock-electric-blue hover:bg-zenblock-white/90"
+              >
                 Schedule a Demo
               </Button>
             </CardContent>

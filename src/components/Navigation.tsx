@@ -6,13 +6,25 @@ import { Menu, X } from "lucide-react";
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const handleBookDemo = () => {
+    scrollToSection('contact');
+  };
+
   const navItems = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#solution", label: "Solution" },
-    { href: "#industries", label: "Industries" },
-    { href: "#compliance", label: "Compliance" },
-    { href: "#contact", label: "Contact" },
+    { href: "home", label: "Home" },
+    { href: "about", label: "About" },
+    { href: "solution", label: "Solution" },
+    { href: "industries", label: "Industries" },
+    { href: "compliance", label: "Compliance" },
+    { href: "contact", label: "Contact" },
   ];
 
   return (
@@ -21,29 +33,35 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-zenblock-dark-blue">
+            <button
+              onClick={() => scrollToSection('home')}
+              className="text-2xl font-bold text-zenblock-dark-blue hover:text-zenblock-electric-blue transition-colors"
+            >
               Zenblock Labs
-            </span>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.href}
-                  href={item.href}
+                  onClick={() => scrollToSection(item.href)}
                   className="text-zenblock-secondary-text hover:text-zenblock-electric-blue px-3 py-2 rounded-md text-[1rem] font-medium transition-colors duration-200"
                 >
                   {item.label}
-                </a>
+                </button>
               ))}
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]">
+            <Button 
+              onClick={handleBookDemo}
+              className="bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]"
+            >
               Book a Demo
             </Button>
           </div>
@@ -65,17 +83,19 @@ const Navigation = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-zenblock-white border-t border-gray-200">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.href}
-                  href={item.href}
-                  className="text-zenblock-secondary-text hover:text-zenblock-electric-blue block px-3 py-2 rounded-md text-[1rem] font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-zenblock-secondary-text hover:text-zenblock-electric-blue block px-3 py-2 rounded-md text-[1rem] font-medium w-full text-left"
                 >
                   {item.label}
-                </a>
+                </button>
               ))}
               <div className="pt-2">
-                <Button className="w-full bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]">
+                <Button 
+                  onClick={handleBookDemo}
+                  className="w-full bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]"
+                >
                   Book a Demo
                 </Button>
               </div>

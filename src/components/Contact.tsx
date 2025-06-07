@@ -32,6 +32,21 @@ const Contact = () => {
     });
   };
 
+  const handleScheduleDemo = () => {
+    // Scroll to top of contact form
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleWhatsApp = () => {
+    const phoneNumber = "919059392438";
+    const message = "Hi! I'm interested in learning more about Zenblock Labs' blockchain solutions for supply chain traceability.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6 text-zenblock-electric-blue" />,
@@ -41,7 +56,7 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6 text-zenblock-electric-blue" />,
       title: "Phone",
-      details: ["+91 XXX XXX XXXX", "Available 9 AM - 6 PM IST"]
+      details: ["+91 905 939 2438", "Available 9 AM - 6 PM IST"]
     },
     {
       icon: <Mail className="w-6 h-6 text-zenblock-electric-blue" />,
@@ -169,6 +184,7 @@ const Contact = () => {
             <div className="space-y-4 pt-6">
               <Button 
                 size="lg" 
+                onClick={handleScheduleDemo}
                 className="w-full bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]"
               >
                 <Calendar className="mr-2" size={20} />
@@ -177,6 +193,7 @@ const Contact = () => {
               
               <Button 
                 size="lg" 
+                onClick={handleWhatsApp}
                 className="w-full bg-zenblock-pharma-green hover:bg-zenblock-pharma-green/90 text-zenblock-white text-[1rem]"
               >
                 <Phone className="mr-2" size={20} />

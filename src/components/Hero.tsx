@@ -3,6 +3,21 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleBookDemo = () => {
+    scrollToSection('contact');
+  };
+
+  const handleExploreSolution = () => {
+    scrollToSection('solution');
+  };
+
   return (
     <section id="home" className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background decorative elements */}
@@ -30,6 +45,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               size="lg" 
+              onClick={handleExploreSolution}
               className="bg-zenblock-electric-blue text-zenblock-white hover:bg-zenblock-electric-blue/90 text-[1rem] px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Explore Our Solution
@@ -38,6 +54,7 @@ const Hero = () => {
             
             <Button 
               size="lg" 
+              onClick={handleBookDemo}
               className="bg-zenblock-pharma-green text-zenblock-white hover:bg-zenblock-pharma-green/90 text-[1rem] px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Book a Demo
