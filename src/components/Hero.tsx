@@ -26,7 +26,7 @@ const Hero = () => {
       <div className="absolute bottom-20 left-20 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fade-in space-y-8">
+        <div className="animate-fade-in space-y-8 pt-16 sm:pt-20 md:pt-24">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[3.25rem] font-bold text-zenblock-inverse-text mb-6 leading-tight sm:leading-relaxed">
             Enabling Trust in
             <br />
