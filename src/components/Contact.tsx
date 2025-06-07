@@ -177,8 +177,7 @@ const Contact = () => {
               
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="w-full border-zenblock-electric-blue text-zenblock-electric-blue hover:bg-zenblock-electric-blue hover:text-zenblock-white text-[1rem]"
+                className="w-full bg-zenblock-pharma-green hover:bg-zenblock-pharma-green/90 text-zenblock-white text-[1rem]"
               >
                 <Phone className="mr-2" size={20} />
                 WhatsApp Us

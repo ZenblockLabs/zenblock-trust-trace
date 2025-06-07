@@ -12,7 +12,7 @@ const Hero = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in space-y-8">
-          <h1 className="text-2xl md:text-3xl lg:text-[3rem] font-bold text-zenblock-inverse-text mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-[3.25rem] font-bold text-zenblock-inverse-text mb-6 leading-relaxed">
             Enabling Trust in
             <br />
             <span className="bg-gradient-to-r from-zenblock-white to-zenblock-electric-blue bg-clip-text text-transparent">
