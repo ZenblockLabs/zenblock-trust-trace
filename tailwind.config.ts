@@ -67,11 +67,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				zenblock: {
-					blue: '#1e40af',
-					navy: '#1e3a8a',
-					violet: '#8b5cf6',
-					green: '#059669',
-					gray: '#6b7280'
+					'dark-blue': '#1B1F3B',
+					'white': '#FFFFFF',
+					'soft-violet': '#CDC6E7',
+					'electric-blue': '#2EC4F1',
+					'pharma-green': '#28C76F',
+					'soft-mint': '#D6F5E3',
+					'primary-text': '#1C1C1C',
+					'secondary-text': '#4A4A4A',
+					'inverse-text': '#F2F2F2'
 				}
 			},
 			borderRadius: {
