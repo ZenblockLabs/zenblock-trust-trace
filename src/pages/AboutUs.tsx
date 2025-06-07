@@ -2,32 +2,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Target, Users, Lightbulb } from "lucide-react";
 
 const AboutUs = () => {
-  const values = [
-    {
-      icon: <Shield className="w-8 h-8 text-zenblock-electric-blue" />,
-      title: "Trust",
-      description: "Building unshakeable confidence in every transaction"
-    },
-    {
-      icon: <Target className="w-8 h-8 text-zenblock-electric-blue" />,
-      title: "Transparency", 
-      description: "Complete visibility across the entire supply chain"
-    },
-    {
-      icon: <Users className="w-8 h-8 text-zenblock-electric-blue" />,
-      title: "Integrity",
-      description: "Honest, ethical practices in everything we do"
-    },
-    {
-      icon: <Lightbulb className="w-8 h-8 text-zenblock-electric-blue" />,
-      title: "Innovation",
-      description: "Cutting-edge technology for tomorrow's challenges"
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -38,54 +14,79 @@ const AboutUs = () => {
               About Zenblock Labs
             </h1>
             <p className="text-xl text-zenblock-secondary-text max-w-3xl mx-auto">
-              Our vision is to ensure and assure that every business operates on trust. 
-              We're solving the critical challenges of counterfeits, compliance gaps, 
-              and supply chain fragmentation in regulated industries.
+              Pioneering blockchain solutions for pharmaceutical supply chain transparency, 
+              compliance, and trust in the digital age.
             </p>
           </div>
 
-          <div className="mb-16">
-            <Card className="bg-zenblock-white shadow-lg border-l-4 border-l-zenblock-electric-blue">
+          <div className="space-y-12">
+            <Card className="bg-zenblock-white">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-zenblock-primary-text mb-6">Our Mission</h2>
-                <p className="text-lg text-zenblock-secondary-text mb-6">
-                  To revolutionize pharmaceutical supply chains through blockchain technology, 
-                  ensuring complete traceability, regulatory compliance, and trust between all stakeholders.
+                <p className="text-lg text-zenblock-secondary-text leading-relaxed">
+                  At Zenblock Labs, we're dedicated to revolutionizing pharmaceutical supply chains 
+                  through cutting-edge blockchain technology. Our mission is to create an ecosystem 
+                  where every medication can be traced from manufacturer to patient, ensuring 
+                  authenticity, safety, and regulatory compliance at every step.
                 </p>
-                <h3 className="text-2xl font-bold text-zenblock-primary-text mb-4">The Problem We Solve</h3>
+              </CardContent>
+            </Card>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="bg-zenblock-soft-violet">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-zenblock-primary-text mb-4">Our Vision</h3>
+                  <p className="text-zenblock-secondary-text">
+                    To build a future where pharmaceutical supply chains are completely transparent, 
+                    secure, and trusted by patients, healthcare providers, and regulatory bodies worldwide.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-zenblock-soft-mint">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-zenblock-primary-text mb-4">Our Values</h3>
+                  <ul className="space-y-2 text-zenblock-secondary-text">
+                    <li>• Transparency in every transaction</li>
+                    <li>• Innovation through technology</li>
+                    <li>• Patient safety first</li>
+                    <li>• Regulatory compliance</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-zenblock-white">
+              <CardContent className="p-8">
+                <h2 className="text-3xl font-bold text-zenblock-primary-text mb-6">Why Choose Zenblock Labs?</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div>
-                    <h4 className="font-semibold text-zenblock-primary-text mb-2">Counterfeiting</h4>
-                    <p className="text-zenblock-secondary-text">$200B+ annual losses from fake pharmaceuticals globally</p>
+                    <h4 className="text-xl font-semibold text-zenblock-electric-blue mb-3">
+                      Proven Technology
+                    </h4>
+                    <p className="text-zenblock-secondary-text">
+                      Our blockchain platform has been tested and validated by leading pharmaceutical companies.
+                    </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-zenblock-primary-text mb-2">Compliance Gaps</h4>
-                    <p className="text-zenblock-secondary-text">Complex regulatory requirements across multiple jurisdictions</p>
+                    <h4 className="text-xl font-semibold text-zenblock-pharma-green mb-3">
+                      Regulatory Expertise
+                    </h4>
+                    <p className="text-zenblock-secondary-text">
+                      Deep understanding of global pharmaceutical regulations and compliance requirements.
+                    </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-zenblock-primary-text mb-2">Fragmentation</h4>
-                    <p className="text-zenblock-secondary-text">Lack of visibility and coordination across supply chain partners</p>
+                    <h4 className="text-xl font-semibold text-zenblock-electric-blue mb-3">
+                      Scalable Solutions
+                    </h4>
+                    <p className="text-zenblock-secondary-text">
+                      From small biotech firms to global pharmaceutical giants, our platform scales with your needs.
+                    </p>
                   </div>
                 </div>
               </CardContent>
             </Card>
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-bold text-center text-zenblock-primary-text mb-12">Our Core Values</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {values.map((value, index) => (
-                <Card key={index} className="text-center card-hover bg-zenblock-white">
-                  <CardContent className="p-6">
-                    <div className="flex justify-center mb-4">
-                      {value.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-zenblock-primary-text mb-2">{value.title}</h3>
-                    <p className="text-zenblock-secondary-text">{value.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           </div>
         </div>
       </div>

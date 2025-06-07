@@ -35,9 +35,16 @@ const Navigation = () => {
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-2xl font-bold text-zenblock-dark-blue hover:text-zenblock-electric-blue transition-colors"
+              className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
             >
-              Zenblock Labs
+              <img 
+                src="/lovable-uploads/ce5f1560-0ad9-4099-a10e-dce142421f2c.png" 
+                alt="Zenblock Labs Logo" 
+                className="h-10 w-10"
+              />
+              <span className="text-2xl font-bold text-zenblock-dark-blue">
+                Zenblock Labs
+              </span>
             </button>
           </div>
 
