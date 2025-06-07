@@ -55,7 +55,7 @@
     --card-foreground: 248 250 252;
 
     --popover: 15 23 42;
-    --popover-foreground: 248 250 252;
+    --popover-foreground: 15 23 42;
 
     --primary: 59 130 246;
     --primary-foreground: 15 23 42;
@@ -99,7 +99,7 @@
 
 @layer components {
   .hero-gradient {
-    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 50%, #8b5cf6 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
   }
   
   .card-hover {
@@ -107,6 +107,6 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-zenblock-blue to-zenblock-violet bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-zenblock-blue to-zenblock-navy bg-clip-text text-transparent;
   }
 }
