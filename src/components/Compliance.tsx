@@ -56,7 +56,7 @@ const Compliance = () => {
     switch (status) {
       case "ready": return "bg-green-100 text-green-800 border-green-200";
       case "pilot": return "bg-blue-100 text-blue-800 border-blue-200";
-      case "development": return "bg-yellow-100 text-yellow-800 border-yellow-200";
+      case "development": return "bg-orange-100 text-orange-800 border-orange-200";
       default: return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
@@ -65,20 +65,20 @@ const Compliance = () => {
     switch (status) {
       case "ready": return <CheckCircle className="w-5 h-5 text-green-600" />;
       case "pilot": return <Clock className="w-5 h-5 text-blue-600" />;
-      case "development": return <Clock className="w-5 h-5 text-yellow-600" />;
+      case "development": return <Clock className="w-5 h-5 text-orange-600" />;
       default: return <Clock className="w-5 h-5 text-gray-600" />;
     }
   };
 
   return (
-    <section id="compliance" className="py-20 bg-gray-50">
+    <section id="compliance" className="py-20 bg-zenblock-soft-violet">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-[2rem] font-bold text-zenblock-primary-text mb-6">
             Regulatory Compliance
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-[1.125rem] text-zenblock-secondary-text max-w-3xl mx-auto">
             Our platform is designed to meet the stringent regulatory requirements 
             across multiple jurisdictions, ensuring seamless compliance for global operations.
           </p>
@@ -86,10 +86,10 @@ const Compliance = () => {
 
         {/* Regional Compliance */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Regional Regulations</h3>
+          <h3 className="text-3xl lg:text-[2rem] font-bold text-center text-zenblock-primary-text mb-12">Regional Regulations</h3>
           <div className="grid lg:grid-cols-3 gap-8">
             {regulations.map((reg, index) => (
-              <Card key={index} className="card-hover">
+              <Card key={index} className="card-hover bg-zenblock-white">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
                     <div className="text-3xl">{reg.icon}</div>
@@ -98,24 +98,24 @@ const Compliance = () => {
                       <span className="ml-1 capitalize">{reg.status}</span>
                     </Badge>
                   </div>
-                  <CardTitle className="text-xl">{reg.name}</CardTitle>
-                  <p className="text-sm text-gray-500">{reg.region}</p>
+                  <CardTitle className="text-xl lg:text-[1rem] text-zenblock-primary-text">{reg.name}</CardTitle>
+                  <p className="text-sm text-zenblock-secondary-text">{reg.region}</p>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-gray-600">{reg.description}</p>
+                  <p className="text-zenblock-secondary-text text-[1rem]">{reg.description}</p>
                   
                   <div>
-                    <div className="text-sm font-medium text-gray-900 mb-1">Timeline</div>
-                    <div className="text-sm text-gray-600">{reg.timeline}</div>
+                    <div className="text-sm font-medium text-zenblock-primary-text mb-1">Timeline</div>
+                    <div className="text-sm text-zenblock-secondary-text">{reg.timeline}</div>
                   </div>
 
                   <div>
-                    <div className="text-sm font-medium text-gray-900 mb-2">Key Features</div>
+                    <div className="text-sm font-medium text-zenblock-primary-text mb-2">Key Features</div>
                     <div className="space-y-1">
                       {reg.features.map((feature, fIndex) => (
                         <div key={fIndex} className="flex items-center space-x-2 text-sm">
-                          <div className="w-1.5 h-1.5 bg-zenblock-blue rounded-full"></div>
-                          <span className="text-gray-600">{feature}</span>
+                          <div className="w-1.5 h-1.5 bg-zenblock-electric-blue rounded-full"></div>
+                          <span className="text-zenblock-secondary-text">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -128,19 +128,19 @@ const Compliance = () => {
 
         {/* International Standards */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">International Standards</h3>
+          <h3 className="text-3xl lg:text-[2rem] font-bold text-center text-zenblock-primary-text mb-12">International Standards</h3>
           <div className="space-y-6">
             {standards.map((standard, index) => (
-              <Card key={index} className="card-hover">
+              <Card key={index} className="card-hover bg-zenblock-white">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <Shield className="w-8 h-8 text-zenblock-blue flex-shrink-0 mt-1" />
+                    <Shield className="w-8 h-8 text-zenblock-electric-blue flex-shrink-0 mt-1" />
                     <div className="flex-1">
-                      <h4 className="text-xl font-semibold text-gray-900 mb-2">{standard.name}</h4>
-                      <p className="text-gray-600 mb-3">{standard.description}</p>
-                      <div className="bg-blue-50 p-3 rounded-lg">
-                        <div className="text-sm font-medium text-zenblock-blue mb-1">Our Compliance</div>
-                        <div className="text-sm text-gray-700">{standard.compliance}</div>
+                      <h4 className="text-xl lg:text-[1rem] font-semibold text-zenblock-primary-text mb-2">{standard.name}</h4>
+                      <p className="text-zenblock-secondary-text mb-3 text-[1rem]">{standard.description}</p>
+                      <div className="bg-zenblock-soft-mint p-3 rounded-lg">
+                        <div className="text-sm font-medium text-zenblock-electric-blue mb-1">Our Compliance</div>
+                        <div className="text-sm text-zenblock-secondary-text">{standard.compliance}</div>
                       </div>
                     </div>
                   </div>
@@ -152,11 +152,11 @@ const Compliance = () => {
 
         {/* Future Roadmap */}
         <div>
-          <Card className="bg-gradient-to-r from-zenblock-blue to-zenblock-navy text-white">
+          <Card className="bg-gradient-to-r from-zenblock-dark-blue to-zenblock-electric-blue text-zenblock-white">
             <CardContent className="p-8">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-4">Compliance Roadmap</h3>
-                <p className="text-blue-100">
+                <h3 className="text-2xl lg:text-[2rem] font-bold mb-4">Compliance Roadmap</h3>
+                <p className="text-zenblock-inverse-text/80 text-[1rem]">
                   Our ongoing commitment to regulatory excellence across global markets
                 </p>
               </div>
@@ -164,18 +164,18 @@ const Compliance = () => {
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <Globe className="w-8 h-8 mx-auto mb-3" />
-                  <h4 className="font-semibold mb-2">FDA Sandbox</h4>
-                  <p className="text-blue-200 text-sm">Participating in regulatory sandbox programs</p>
+                  <h4 className="font-semibold mb-2 text-[1rem]">FDA Sandbox</h4>
+                  <p className="text-zenblock-inverse-text/80 text-[0.875rem]">Participating in regulatory sandbox programs</p>
                 </div>
                 <div className="text-center">
                   <CheckCircle className="w-8 h-8 mx-auto mb-3" />
-                  <h4 className="font-semibold mb-2">EU MDR</h4>
-                  <p className="text-blue-200 text-sm">Expanding to European medical device regulations</p>
+                  <h4 className="font-semibold mb-2 text-[1rem]">EU MDR</h4>
+                  <p className="text-zenblock-inverse-text/80 text-[0.875rem]">Expanding to European medical device regulations</p>
                 </div>
                 <div className="text-center">
                   <Shield className="w-8 h-8 mx-auto mb-3" />
-                  <h4 className="font-semibold mb-2">WHO Standards</h4>
-                  <p className="text-blue-200 text-sm">Aligning with World Health Organization guidelines</p>
+                  <h4 className="font-semibold mb-2 text-[1rem]">WHO Standards</h4>
+                  <p className="text-zenblock-inverse-text/80 text-[0.875rem]">Aligning with World Health Organization guidelines</p>
                 </div>
               </div>
             </CardContent>
