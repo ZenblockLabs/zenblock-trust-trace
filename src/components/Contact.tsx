@@ -34,36 +34,36 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <MapPin className="w-6 h-6 text-zenblock-blue" />,
+      icon: <MapPin className="w-6 h-6 text-zenblock-electric-blue" />,
       title: "Headquarters",
-      details: ["Mumbai, India", "SINE IIT Bombay Incubator"]
+      details: ["Hyderabad, India"]
     },
     {
-      icon: <Phone className="w-6 h-6 text-zenblock-blue" />,
+      icon: <Phone className="w-6 h-6 text-zenblock-electric-blue" />,
       title: "Phone",
       details: ["+91 XXX XXX XXXX", "Available 9 AM - 6 PM IST"]
     },
     {
-      icon: <Mail className="w-6 h-6 text-zenblock-blue" />,
+      icon: <Mail className="w-6 h-6 text-zenblock-electric-blue" />,
       title: "Email",
       details: ["info@zenblocklabs.com", "partnerships@zenblocklabs.com"]
     },
     {
-      icon: <Calendar className="w-6 h-6 text-zenblock-blue" />,
+      icon: <Calendar className="w-6 h-6 text-zenblock-electric-blue" />,
       title: "Book a Call",
       details: ["Schedule a demo", "Free consultation available"]
     }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-zenblock-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-[2rem] font-bold text-zenblock-primary-text mb-6">
             Get In Touch
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-[1.125rem] text-zenblock-secondary-text max-w-3xl mx-auto">
             Ready to transform your supply chain? Let's discuss how Zenblock Labs 
             can help you build trust and transparency in your operations.
           </p>
@@ -71,14 +71,14 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="shadow-xl">
+          <Card className="shadow-xl bg-zenblock-white">
             <CardHeader>
-              <CardTitle className="text-2xl text-gray-900">Send Us a Message</CardTitle>
+              <CardTitle className="text-2xl text-zenblock-primary-text">Send Us a Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-zenblock-primary-text mb-1">
                     Full Name *
                   </label>
                   <Input
@@ -94,7 +94,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-zenblock-primary-text mb-1">
                     Email Address *
                   </label>
                   <Input
@@ -110,7 +110,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="company" className="block text-sm font-medium text-zenblock-primary-text mb-1">
                     Company/Organization
                   </label>
                   <Input
@@ -125,7 +125,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-zenblock-primary-text mb-1">
                     Message *
                   </label>
                   <Textarea
@@ -140,7 +140,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-zenblock-blue hover:bg-zenblock-navy text-lg py-6">
+                <Button type="submit" className="w-full bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem] py-6">
                   Send Message
                 </Button>
               </form>
@@ -150,14 +150,14 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-6">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="card-hover">
+              <Card key={index} className="card-hover bg-zenblock-white">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     {info.icon}
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h3>
+                      <h3 className="text-lg font-semibold text-zenblock-primary-text mb-2">{info.title}</h3>
                       {info.details.map((detail, dIndex) => (
-                        <p key={dIndex} className="text-gray-600">{detail}</p>
+                        <p key={dIndex} className="text-zenblock-secondary-text text-[1rem]">{detail}</p>
                       ))}
                     </div>
                   </div>
@@ -169,7 +169,7 @@ const Contact = () => {
             <div className="space-y-4 pt-6">
               <Button 
                 size="lg" 
-                className="w-full bg-zenblock-blue hover:bg-zenblock-navy"
+                className="w-full bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]"
               >
                 <Calendar className="mr-2" size={20} />
                 Schedule a Demo
@@ -178,7 +178,7 @@ const Contact = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="w-full border-zenblock-blue text-zenblock-blue hover:bg-zenblock-blue hover:text-white"
+                className="w-full border-zenblock-electric-blue text-zenblock-electric-blue hover:bg-zenblock-electric-blue hover:text-zenblock-white text-[1rem]"
               >
                 <Phone className="mr-2" size={20} />
                 WhatsApp Us
@@ -186,25 +186,25 @@ const Contact = () => {
             </div>
 
             {/* Additional Info */}
-            <Card className="bg-blue-50">
+            <Card className="bg-zenblock-soft-mint">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Why Partner With Us?</h3>
-                <ul className="space-y-2 text-gray-600">
+                <h3 className="text-lg font-semibold text-zenblock-primary-text mb-3">Why Partner With Us?</h3>
+                <ul className="space-y-2 text-zenblock-secondary-text">
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-zenblock-blue rounded-full"></div>
-                    <span>Free initial consultation</span>
+                    <div className="w-2 h-2 bg-zenblock-electric-blue rounded-full"></div>
+                    <span className="text-[1rem]">Free initial consultation</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-zenblock-blue rounded-full"></div>
-                    <span>Custom solution design</span>
+                    <div className="w-2 h-2 bg-zenblock-electric-blue rounded-full"></div>
+                    <span className="text-[1rem]">Custom solution design</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-zenblock-blue rounded-full"></div>
-                    <span>Regulatory compliance support</span>
+                    <div className="w-2 h-2 bg-zenblock-electric-blue rounded-full"></div>
+                    <span className="text-[1rem]">Regulatory compliance support</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-zenblock-blue rounded-full"></div>
-                    <span>24/7 technical support</span>
+                    <div className="w-2 h-2 bg-zenblock-electric-blue rounded-full"></div>
+                    <span className="text-[1rem]">24/7 technical support</span>
                   </li>
                 </ul>
               </CardContent>
