@@ -32,7 +32,7 @@ const News = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-zenblock-white">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +48,7 @@ const News = () => {
 
           <div className="space-y-8">
             {newsItems.map((item, index) => (
-              <Card key={index} className="bg-zenblock-white card-hover">
+              <Card key={index} className="bg-zenblock-white card-hover border border-zenblock-soft-violet">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-sm text-zenblock-electric-blue font-medium">{item.category}</span>
@@ -65,7 +65,7 @@ const News = () => {
           </div>
 
           <div className="mt-16">
-            <Card className="bg-zenblock-soft-mint">
+            <Card className="bg-zenblock-soft-mint border border-zenblock-soft-violet">
               <CardContent className="p-8 text-center">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Media Inquiries</h2>
                 <p className="text-zenblock-secondary-text mb-6">

@@ -30,7 +30,7 @@ const Careers = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-zenblock-white">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +48,7 @@ const Careers = () => {
             <h2 className="text-3xl font-bold text-zenblock-primary-text mb-8 text-center">Open Positions</h2>
             <div className="space-y-6">
               {openPositions.map((position, index) => (
-                <Card key={index} className="bg-zenblock-white card-hover">
+                <Card key={index} className="bg-zenblock-white card-hover border border-zenblock-soft-violet">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                       <div className="flex-1">
@@ -72,7 +72,7 @@ const Careers = () => {
             </div>
           </div>
 
-          <Card className="bg-zenblock-soft-violet">
+          <Card className="bg-zenblock-soft-violet border border-zenblock-soft-violet">
             <CardContent className="p-8 text-center">
               <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Why Work With Us?</h2>
               <div className="grid md:grid-cols-3 gap-6">

@@ -3,31 +3,49 @@ import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const footerLinks = {
     company: [
-      { name: "About Us", href: "/about-us" },
-      { name: "Our Team", href: "/team" },
-      { name: "Careers", href: "/careers" },
-      { name: "News", href: "/news" }
+      { name: "About Us", href: "/about-us", isExternal: false },
+      { name: "Our Team", href: "/team", isExternal: false },
+      { name: "Careers", href: "/careers", isExternal: false },
+      { name: "News", href: "/news", isExternal: false }
     ],
     product: [
-      { name: "Solution", href: "/#solution" },
-      { name: "Industries", href: "/#industries" },
-      { name: "Compliance", href: "/#compliance" },
-      { name: "Documentation", href: "/api-docs" }
+      { name: "Solution", href: "/#solution", isExternal: false, isAnchor: true },
+      { name: "Industries", href: "/#industries", isExternal: false, isAnchor: true },
+      { name: "Compliance", href: "/#compliance", isExternal: false, isAnchor: true },
+      { name: "Documentation", href: "/api-docs", isExternal: false }
     ],
     resources: [
-      { name: "Case Studies", href: "/case-studies" },
-      { name: "Blog", href: "/blog" },
-      { name: "Whitepapers", href: "/whitepapers" },
-      { name: "API Docs", href: "/api-docs" }
+      { name: "Case Studies", href: "/case-studies", isExternal: false },
+      { name: "Blog", href: "/blog", isExternal: false },
+      { name: "Whitepapers", href: "/whitepapers", isExternal: false },
+      { name: "API Docs", href: "/api-docs", isExternal: false }
     ],
     legal: [
-      { name: "Privacy Policy", href: "/privacy-policy" },
-      { name: "Terms of Service", href: "/terms-of-service" },
-      { name: "Cookie Policy", href: "/cookie-policy" },
-      { name: "GDPR", href: "/gdpr" }
+      { name: "Privacy Policy", href: "/privacy-policy", isExternal: false },
+      { name: "Terms of Service", href: "/terms-of-service", isExternal: false },
+      { name: "Cookie Policy", href: "/cookie-policy", isExternal: false },
+      { name: "GDPR", href: "/gdpr", isExternal: false }
     ]
+  };
+
+  const handleLinkClick = (link: any) => {
+    if (link.isAnchor) {
+      const sectionId = link.href.split('#')[1];
+      if (window.location.pathname !== '/') {
+        window.location.href = link.href;
+      } else {
+        scrollToSection(sectionId);
+      }
+    }
   };
 
   return (
@@ -72,12 +90,21 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.product.map((link, index) => (
                 <li key={index}>
-                  <Link 
-                    to={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.isAnchor ? (
+                    <button
+                      onClick={() => handleLinkClick(link)}
+                      className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem] text-left"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <Link 
+                      to={link.href} 
+                      className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

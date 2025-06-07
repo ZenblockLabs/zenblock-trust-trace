@@ -6,25 +6,25 @@ import { Card, CardContent } from "@/components/ui/card";
 const Team = () => {
   const teamMembers = [
     {
-      name: "Dr. Sarah Chen",
+      name: "Dr. Priya Sharma",
       role: "Chief Executive Officer",
       background: "Former VP of Digital Innovation at leading pharmaceutical company with 15+ years experience.",
       expertise: "Pharmaceutical Operations, Digital Transformation"
     },
     {
-      name: "Michael Rodriguez",
+      name: "Arjun Patel",
       role: "Chief Technology Officer", 
       background: "Blockchain architect with expertise in enterprise solutions and regulatory compliance systems.",
       expertise: "Blockchain Development, System Architecture"
     },
     {
-      name: "Dr. James Wilson",
+      name: "Dr. Rajesh Kumar",
       role: "Chief Compliance Officer",
       background: "Former FDA regulatory affairs specialist with deep knowledge of global pharmaceutical regulations.",
       expertise: "Regulatory Affairs, Compliance Strategy"
     },
     {
-      name: "Lisa Zhang",
+      name: "Ananya Singh",
       role: "VP of Product",
       background: "Product management leader with experience building healthcare technology platforms.",
       expertise: "Product Strategy, Healthcare Technology"
@@ -32,7 +32,7 @@ const Team = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-zenblock-white">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +48,7 @@ const Team = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="bg-zenblock-white card-hover">
+              <Card key={index} className="bg-zenblock-white card-hover border border-zenblock-soft-violet">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-zenblock-primary-text mb-2">{member.name}</h3>
                   <h4 className="text-lg font-semibold text-zenblock-electric-blue mb-4">{member.role}</h4>
@@ -64,7 +64,7 @@ const Team = () => {
           </div>
 
           <div className="mt-16">
-            <Card className="bg-zenblock-soft-violet">
+            <Card className="bg-zenblock-soft-violet border border-zenblock-soft-violet">
               <CardContent className="p-8 text-center">
                 <h2 className="text-3xl font-bold text-zenblock-primary-text mb-4">Join Our Team</h2>
                 <p className="text-lg text-zenblock-secondary-text mb-6">

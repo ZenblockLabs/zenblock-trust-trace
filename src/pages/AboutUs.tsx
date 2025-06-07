@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-zenblock-white">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +20,7 @@ const AboutUs = () => {
           </div>
 
           <div className="space-y-12">
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-zenblock-primary-text mb-6">Our Mission</h2>
                 <p className="text-lg text-zenblock-secondary-text leading-relaxed">
@@ -33,7 +33,7 @@ const AboutUs = () => {
             </Card>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-zenblock-soft-violet">
+              <Card className="bg-zenblock-soft-violet border border-zenblock-soft-violet">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-zenblock-primary-text mb-4">Our Vision</h3>
                   <p className="text-zenblock-secondary-text">
@@ -43,7 +43,7 @@ const AboutUs = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-zenblock-soft-mint">
+              <Card className="bg-zenblock-soft-mint border border-zenblock-soft-violet">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-zenblock-primary-text mb-4">Our Values</h3>
                   <ul className="space-y-2 text-zenblock-secondary-text">
@@ -56,7 +56,7 @@ const AboutUs = () => {
               </Card>
             </div>
 
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-zenblock-primary-text mb-6">Why Choose Zenblock Labs?</h2>
                 <div className="grid md:grid-cols-3 gap-6">

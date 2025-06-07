@@ -36,7 +36,7 @@ const Whitepapers = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-zenblock-white">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,7 +52,7 @@ const Whitepapers = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {whitepapers.map((paper, index) => (
-              <Card key={index} className="bg-zenblock-white card-hover">
+              <Card key={index} className="bg-zenblock-white card-hover border border-zenblock-soft-violet">
                 <CardContent className="p-8">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-sm text-zenblock-electric-blue font-medium">{paper.category}</span>
@@ -74,7 +74,7 @@ const Whitepapers = () => {
           </div>
 
           <div className="mt-16">
-            <Card className="bg-zenblock-soft-violet">
+            <Card className="bg-zenblock-soft-violet border border-zenblock-soft-violet">
               <CardContent className="p-8 text-center">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Research Collaboration</h2>
                 <p className="text-zenblock-secondary-text mb-6">
