@@ -26,7 +26,7 @@ const ApiDocs = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-zenblock-white">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +41,7 @@ const ApiDocs = () => {
           </div>
 
           <div className="mb-12">
-            <Card className="bg-zenblock-soft-violet">
+            <Card className="bg-zenblock-soft-violet border border-zenblock-electric-blue">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Getting Started</h2>
                 <div className="space-y-4 text-zenblock-secondary-text">
@@ -65,14 +65,14 @@ const ApiDocs = () => {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-zenblock-primary-text mb-8">API Endpoints</h2>
             {endpoints.map((endpoint, index) => (
-              <Card key={index} className="bg-zenblock-white">
+              <Card key={index} className="bg-zenblock-white border border-zenblock-soft-violet">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-4">
                     <span className={`px-3 py-1 rounded text-sm font-medium ${
                       endpoint.method === 'GET' 
                         ? 'bg-zenblock-soft-mint text-zenblock-pharma-green'
                         : endpoint.method === 'POST'
-                        ? 'bg-blue-100 text-blue-800' 
+                        ? 'bg-zenblock-soft-violet text-zenblock-electric-blue' 
                         : 'bg-orange-100 text-orange-800'
                     }`}>
                       {endpoint.method}

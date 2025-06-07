@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const TermsOfService = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-zenblock-white">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@ const TermsOfService = () => {
           </div>
 
           <div className="space-y-8">
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Acceptance of Terms</h2>
                 <p className="text-zenblock-secondary-text">
@@ -30,7 +30,7 @@ const TermsOfService = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Service Description</h2>
                 <div className="space-y-4 text-zenblock-secondary-text">
@@ -48,7 +48,7 @@ const TermsOfService = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">User Responsibilities</h2>
                 <div className="space-y-4 text-zenblock-secondary-text">
@@ -62,7 +62,7 @@ const TermsOfService = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Limitation of Liability</h2>
                 <p className="text-zenblock-secondary-text">

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const GDPR = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-zenblock-white">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@ const GDPR = () => {
           </div>
 
           <div className="space-y-8">
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Your Rights Under GDPR</h2>
                 <div className="space-y-4 text-zenblock-secondary-text">
@@ -38,7 +38,7 @@ const GDPR = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Legal Basis for Processing</h2>
                 <div className="space-y-4 text-zenblock-secondary-text">
@@ -53,7 +53,7 @@ const GDPR = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Data Protection Officer</h2>
                 <p className="text-zenblock-secondary-text">
@@ -67,7 +67,7 @@ const GDPR = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Data Transfers</h2>
                 <p className="text-zenblock-secondary-text">

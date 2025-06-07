@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-zenblock-white">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
           </div>
 
           <div className="space-y-8">
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Information We Collect</h2>
                 <div className="space-y-4 text-zenblock-secondary-text">
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">How We Use Your Information</h2>
                 <div className="space-y-4 text-zenblock-secondary-text">
@@ -52,7 +52,7 @@ const PrivacyPolicy = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Data Security</h2>
                 <p className="text-zenblock-secondary-text">
@@ -63,7 +63,7 @@ const PrivacyPolicy = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-zenblock-white">
+            <Card className="bg-zenblock-white border border-zenblock-soft-violet">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-zenblock-primary-text mb-4">Contact Us</h2>
                 <p className="text-zenblock-secondary-text">

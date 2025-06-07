@@ -29,7 +29,7 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-zenblock-white">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +45,7 @@ const Blog = () => {
 
           <div className="space-y-8">
             {blogPosts.map((post, index) => (
-              <Card key={index} className="bg-zenblock-white card-hover">
+              <Card key={index} className="bg-zenblock-white card-hover border border-zenblock-soft-violet">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-sm text-zenblock-electric-blue font-medium">{post.category}</span>
