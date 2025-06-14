@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,6 +6,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
+const PLACEHOLDER_STYLE =
+  "placeholder-[#222]"; // Use dark grey for placeholders
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,16 +23,23 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
+    // Build mailto string
+    const subject = encodeURIComponent(`Contact Form Message from ${formData.name || "Unknown"}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:info@zenblocklabs.com?subject=${subject}&body=${body}`;
+
+    // Open mailto in new tab
+    window.open(mailtoLink, "_blank");
+
     toast({
-      title: "Message Sent!",
-      description: "Thank you for your interest. We'll be in touch soon.",
+      title: "Ready to Send!",
+      description: "Your default mail client should open. Please confirm and send your message to us.",
       className: "bg-zenblock-soft-mint border-zenblock-pharma-green text-zenblock-primary-text",
     });
-    
+
     setFormData({ name: "", email: "", company: "", message: "" });
     setIsSubmitting(false);
   };
@@ -79,7 +90,7 @@ const Contact = () => {
                       value={formData.name} 
                       onChange={handleChange} 
                       required 
-                      className="bg-zenblock-soft-mint border-none text-zenblock-primary-text"
+                      className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text ${PLACEHOLDER_STYLE}`}
                     />
                   </div>
                   <div>
@@ -90,7 +101,7 @@ const Contact = () => {
                       value={formData.email} 
                       onChange={handleChange} 
                       required 
-                      className="bg-zenblock-soft-mint border-none text-zenblock-primary-text"
+                      className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text ${PLACEHOLDER_STYLE}`}
                     />
                   </div>
                   <div>
@@ -100,7 +111,7 @@ const Contact = () => {
                       placeholder="Your Company" 
                       value={formData.company} 
                       onChange={handleChange} 
-                      className="bg-zenblock-soft-mint border-none text-zenblock-primary-text"
+                      className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text ${PLACEHOLDER_STYLE}`}
                     />
                   </div>
                   <div>
@@ -111,7 +122,7 @@ const Contact = () => {
                       value={formData.message} 
                       onChange={handleChange} 
                       required 
-                      className="bg-zenblock-soft-mint border-none text-zenblock-primary-text resize-none"
+                      className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text resize-none ${PLACEHOLDER_STYLE}`}
                     />
                   </div>
                   <Button 
