@@ -136,7 +136,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-zenblock-primary-text">Phone</h3>
-                    <p className="text-zenblock-secondary-text">+91 9032965988</p>
+                    <p className="text-zenblock-secondary-text">+91 9059392738</p>
                   </div>
                 </div>
 
