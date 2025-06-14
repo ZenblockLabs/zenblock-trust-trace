@@ -7,8 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const PLACEHOLDER_STYLE =
-  "placeholder-[#222]"; // Use dark grey for placeholders
+const PLACEHOLDER_STYLE = "placeholder-[#222]"; // Ensure dark grey for placeholders
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,23 +19,17 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  // Simulate "sending" a message (mock)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Build mailto string
-    const subject = encodeURIComponent(`Contact Form Message from ${formData.name || "Unknown"}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
-    );
-    const mailtoLink = `mailto:info@zenblocklabs.com?subject=${subject}&body=${body}`;
-
-    // Open mailto in new tab
-    window.open(mailtoLink, "_blank");
+    // Simulate API call latency
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
-      title: "Ready to Send!",
-      description: "Your default mail client should open. Please confirm and send your message to us.",
+      title: "Message Sent!",
+      description: "Thank you for contacting us. We will get back to you at info@zenblocklabs.com.",
       className: "bg-zenblock-soft-mint border-zenblock-pharma-green text-zenblock-primary-text",
     });
 
@@ -86,7 +79,7 @@ const Contact = () => {
                     <Input 
                       type="text" 
                       name="name" 
-                      placeholder="Your Name" 
+                      placeholder="Your Name"
                       value={formData.name} 
                       onChange={handleChange} 
                       required 
