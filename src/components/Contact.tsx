@@ -11,10 +11,13 @@ import emailjs from "emailjs-com";
 // Update to ensure placeholder text is always dark grey, not yellow
 const PLACEHOLDER_STYLE = "placeholder:text-[#222]"; // Tailwind for text-[#222]
 
+// EmailJS credentials -- replace with your own
 const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
 const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-// Replace the above constants with your actual EmailJS credentials.
+
+// Zapier webhook - you can set your Zap URL here, leave empty to skip
+const ZAPIER_WEBHOOK_URL = ""; // e.g., "https://hooks.zapier.com/hooks/catch/XXX/YYY/"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,11 +29,43 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Handles form submission using EmailJS
+  // Handles form submission: send to Zapier webhook and EmailJS
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // 1. Send data to Zapier webhook (if URL provided)
+    let zapierSuccess = null;
+    if (ZAPIER_WEBHOOK_URL) {
+      try {
+        await fetch(ZAPIER_WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          mode: "no-cors", // allows fetch even if Zapier doesn't send CORS headers
+          body: JSON.stringify({
+            ...formData,
+            timestamp: new Date().toISOString()
+          })
+        });
+        zapierSuccess = true;
+        toast({
+          title: "Zapier Webhook Triggered",
+          description: "Your message was also sent to Zapier for further automation.",
+          className: "bg-zenblock-soft-mint border-zenblock-pharma-green text-zenblock-primary-text",
+        });
+      } catch (err) {
+        zapierSuccess = false;
+        toast({
+          title: "Zapier Webhook Failed",
+          description: "We couldn't trigger the Zapier automation. Email delivery will still be attempted.",
+          className: "bg-yellow-100 border-yellow-700 text-yellow-800",
+        });
+      }
+    }
+
+    // 2. Send with EmailJS as normal
     emailjs
       .send(
         EMAILJS_SERVICE_ID,
