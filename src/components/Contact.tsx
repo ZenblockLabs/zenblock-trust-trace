@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "emailjs-com";
+import { useContactForm } from "@/hooks/useContactForm";
+import ContactInfo from "./ContactInfo";
 
 // Update to ensure placeholder text is always dark grey, not yellow
 const PLACEHOLDER_STYLE = "placeholder:text-[#222]"; // Tailwind for text-[#222]
@@ -20,91 +21,12 @@ const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 const ZAPIER_WEBHOOK_URL = ""; // e.g., "https://hooks.zapier.com/hooks/catch/XXX/YYY/"
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  // Handles form submission: send to Zapier webhook and EmailJS
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // 1. Send data to Zapier webhook (if URL provided)
-    let zapierSuccess = null;
-    if (ZAPIER_WEBHOOK_URL) {
-      try {
-        await fetch(ZAPIER_WEBHOOK_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          mode: "no-cors", // allows fetch even if Zapier doesn't send CORS headers
-          body: JSON.stringify({
-            ...formData,
-            timestamp: new Date().toISOString()
-          })
-        });
-        zapierSuccess = true;
-        toast({
-          title: "Zapier Webhook Triggered",
-          description: "Your message was also sent to Zapier for further automation.",
-          className: "bg-zenblock-soft-mint border-zenblock-pharma-green text-zenblock-primary-text",
-        });
-      } catch (err) {
-        zapierSuccess = false;
-        toast({
-          title: "Zapier Webhook Failed",
-          description: "We couldn't trigger the Zapier automation. Email delivery will still be attempted.",
-          className: "bg-yellow-100 border-yellow-700 text-yellow-800",
-        });
-      }
-    }
-
-    // 2. Send with EmailJS as normal
-    emailjs
-      .send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          company: formData.company,
-          message: formData.message,
-        },
-        EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          toast({
-            title: "Message Sent!",
-            description: "Thank you for contacting us. We will get back to you at info@zenblocklabs.com.",
-            className: "bg-zenblock-soft-mint border-zenblock-pharma-green text-zenblock-primary-text",
-          });
-          setFormData({ name: "", email: "", company: "", message: "" });
-        },
-        (error) => {
-          console.error("EmailJS error:", error);
-          toast({
-            title: "Failed to Send",
-            description: "Sorry, something went wrong. Please try again later or email us directly at info@zenblocklabs.com.",
-            className: "bg-red-100 border-red-500 text-red-700",
-          });
-        }
-      )
-      .finally(() => setIsSubmitting(false));
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
+  const {
+    formData,
+    isSubmitting,
+    handleChange,
+    handleSubmit,
+  } = useContactForm();
 
   if (isSubmitting) {
     return (
@@ -130,7 +52,6 @@ const Contact = () => {
             We're here to help. Get in touch with our team to discuss your pharmaceutical supply chain needs.
           </p>
         </div>
-
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
@@ -191,52 +112,9 @@ const Contact = () => {
               </CardContent>
             </Card>
           </div>
-
           {/* Contact Information */}
           <div>
-            <Card className="bg-zenblock-soft-mint">
-              <CardContent className="p-8 space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-zenblock-white p-2">
-                    <Phone className="w-6 h-6 text-zenblock-electric-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-zenblock-primary-text">Phone</h3>
-                    <p className="text-zenblock-secondary-text">+91 9059392738</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-zenblock-white p-2">
-                    <Mail className="w-6 h-6 text-zenblock-electric-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-zenblock-primary-text">Email</h3>
-                    <p className="text-zenblock-secondary-text">info@zenblocklabs.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-zenblock-white p-2">
-                    <MapPin className="w-6 h-6 text-zenblock-electric-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-zenblock-primary-text">Address</h3>
-                    <p className="text-zenblock-secondary-text">Hyderabad, India</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-zenblock-white p-2">
-                    <MessageCircle className="w-6 h-6 text-zenblock-electric-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-zenblock-primary-text">Support</h3>
-                    <p className="text-zenblock-secondary-text">Available 24/7</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <ContactInfo />
           </div>
         </div>
       </div>
@@ -245,4 +123,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
