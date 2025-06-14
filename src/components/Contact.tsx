@@ -6,8 +6,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
 
-const PLACEHOLDER_STYLE = "placeholder-[#222]"; // Ensure dark grey for placeholders
+// Update to ensure placeholder text is always dark grey, not yellow
+const PLACEHOLDER_STYLE = "placeholder:text-[#222]"; // Tailwind for text-[#222]
+
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+// Replace the above constants with your actual EmailJS credentials.
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,22 +26,42 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Simulate "sending" a message (mock)
+  // Handles form submission using EmailJS
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call latency
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We will get back to you at info@zenblocklabs.com.",
-      className: "bg-zenblock-soft-mint border-zenblock-pharma-green text-zenblock-primary-text",
-    });
-
-    setFormData({ name: "", email: "", company: "", message: "" });
-    setIsSubmitting(false);
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company,
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message Sent!",
+            description: "Thank you for contacting us. We will get back to you at info@zenblocklabs.com.",
+            className: "bg-zenblock-soft-mint border-zenblock-pharma-green text-zenblock-primary-text",
+          });
+          setFormData({ name: "", email: "", company: "", message: "" });
+        },
+        (error) => {
+          console.error("EmailJS error:", error);
+          toast({
+            title: "Failed to Send",
+            description: "Sorry, something went wrong. Please try again later or email us directly at info@zenblocklabs.com.",
+            className: "bg-red-100 border-red-500 text-red-700",
+          });
+        }
+      )
+      .finally(() => setIsSubmitting(false));
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -183,3 +210,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
