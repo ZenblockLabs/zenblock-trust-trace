@@ -1,9 +1,10 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 import ContactInfo from "./ContactInfo";
 
 // Tailwind class to ensure placeholder text is dark grey
