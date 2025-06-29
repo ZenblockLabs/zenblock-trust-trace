@@ -43,13 +43,13 @@ export const useContactForm = () => {
         toast({
           title: "Zapier Webhook Triggered",
           description: "Your message was also sent to Zapier for further automation.",
-          className: "bg-zenblock-soft-mint border-zenblock-pharma-green text-zenblock-primary-text",
+          className: "bg-zenblock-soft-mint border-zenblock-electric-blue text-zenblock-primary-text",
         });
       } catch (err) {
         toast({
           title: "Zapier Webhook Failed",
           description: "We couldn't trigger the Zapier automation. Email delivery will still be attempted.",
-          className: "bg-yellow-100 border-yellow-700 text-yellow-800",
+          className: "bg-red-100 border-red-500 text-red-700",
         });
       }
     }
@@ -72,7 +72,7 @@ export const useContactForm = () => {
           toast({
             title: "Message Sent!",
             description: "Thank you for contacting us. We will get back to you at info@zenblocklabs.com.",
-            className: "bg-zenblock-soft-mint border-zenblock-pharma-green text-zenblock-primary-text",
+            className: "bg-zenblock-soft-mint border-zenblock-electric-blue text-zenblock-primary-text",
           });
           setFormData({ name: "", email: "", company: "", message: "" });
         },
