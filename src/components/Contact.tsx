@@ -1,62 +1,16 @@
 
-import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
-import emailjs from "emailjs-com";
+import { useContactForm } from "@/hooks/useContactForm";
 import ContactInfo from "./ContactInfo";
 
 // Tailwind class to ensure placeholder text is dark grey
 const PLACEHOLDER_STYLE = "placeholder:text-[#222]";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [company, setCompany] = useState("");
-  const [message, setMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handlesubmit = (e) => {
-    e.preventDefault();
-
-    if (!name || !email || !message) {
-      alert("Please fill in all required fields.");
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    const serviceID = 'service_f0wpovg'
-    const templateID = 'template_5bzcqpr'
-    const publicKey = 'F8ptJ0I7OpktorsD-' 
-
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      company: company,
-      to_name: "ZenBlock Team", // Recipient name
-      message: message,
-    };
-
-    emailjs
-      .send(serviceID, templateID, templateParams, publicKey)
-      .then((response) => {
-        console.log("Email sent!", response.status, response.text);
-        alert("Email sent successfully!");
-        setName("");
-        setEmail("");
-        setCompany("");
-        setMessage("");
-      })
-      .catch((error) => {
-        console.error("Failed to send email:", error);
-        alert("Failed to send email. Please try again later.");
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
-  };
+  const { formData, isSubmitting, handleChange, handleSubmit } = useContactForm();
 
   if (isSubmitting) {
     return (
@@ -90,13 +44,13 @@ const Contact = () => {
           <div>
             <Card className="bg-zenblock-white">
               <CardContent className="p-8">
-                <form onSubmit={handlesubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <Input
                     type="text"
                     name="name"
                     placeholder="Your Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={formData.name}
+                    onChange={handleChange}
                     required
                     className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text ${PLACEHOLDER_STYLE}`}
                   />
@@ -104,8 +58,8 @@ const Contact = () => {
                     type="email"
                     name="email"
                     placeholder="Your Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                     className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text ${PLACEHOLDER_STYLE}`}
                   />
@@ -113,23 +67,23 @@ const Contact = () => {
                     type="text"
                     name="company"
                     placeholder="Your Company"
-                    value={company}
-                    onChange={(e) => setCompany(e.target.value)}
+                    value={formData.company}
+                    onChange={handleChange}
                     className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text ${PLACEHOLDER_STYLE}`}
                   />
                   <Textarea
                     name="message"
                     placeholder="Your Message"
                     rows={4}
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                     className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text resize-none ${PLACEHOLDER_STYLE}`}
                   />
                   <Button
                     type="submit"
                     className="w-full bg-zenblock-electric-blue text-zenblock-white hover:bg-zenblock-electric-blue/90"
-                    // disabled={isSubmitting}
+                    disabled={isSubmitting}
                   >
                     Send Message
                   </Button>
