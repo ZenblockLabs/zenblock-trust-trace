@@ -1,4 +1,5 @@
 
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -71,7 +72,7 @@ export default {
 					'white': '#FFFFFF',
 					'soft-violet': '#CDC6E7',
 					'electric-blue': '#2EC4F1',
-					'pharma-green': '#28C76F',
+					'pharma-green': '#2EC4F1',
 					'soft-mint': '#D6F5E3',
 					'primary-text': '#1C1C1C',
 					'secondary-text': '#4A4A4A',
@@ -131,3 +132,4 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+

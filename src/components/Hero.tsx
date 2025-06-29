@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -54,7 +55,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               onClick={handleBookDemo}
-              className="bg-zenblock-pharma-green text-zenblock-white hover:bg-zenblock-pharma-green/90 text-sm sm:text-[1rem] px-4 sm:px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+              className="bg-zenblock-electric-blue text-zenblock-white hover:bg-zenblock-electric-blue/90 text-sm sm:text-[1rem] px-4 sm:px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
             >
               Book a Demo
             </Button>
