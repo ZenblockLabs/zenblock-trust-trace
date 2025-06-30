@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -11,7 +10,7 @@ const ContactInfo = () => (
         </div>
         <div>
           <h3 className="text-xl font-semibold text-zenblock-primary-text">Phone</h3>
-          <p className="text-zenblock-secondary-text">+91 9059392738</p>
+          <p className="text-zenblock-secondary-text">+91 9059392438</p>
         </div>
       </div>
       <div className="flex items-center gap-4">
