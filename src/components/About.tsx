@@ -51,15 +51,11 @@ const About = () => {
     <section id="about" className="py-12 sm:py-16 lg:py-20 bg-zenblock-pure-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-zenblock-deep-forest mb-4 sm:mb-6">About Zenblock Labs</h2>
-          <p className="text-base sm:text-lg md:text-xl text-zenblock-medium-grey max-w-3xl mx-auto">
-            Building the future of supply chain integrity through blockchain technology
-          </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-zenblock-deep-forest mb-4 sm:mb-6">Why Zenblock Exists</h2>
         </div>
 
-        <div className="mb-16 sm:mb-20">
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-zenblock-deep-forest mb-8 sm:mb-12 text-center">The Problem We Solve</h3>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="mb-12 sm:mb-16">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
             <Card className="border-l-2 sm:border-l-4 border-zenblock-professional-green bg-white hover:shadow-lg transition-shadow">
               <CardContent className="p-5 sm:p-6">
                 <h4 className="text-lg sm:text-xl font-bold text-zenblock-charcoal mb-3">Counterfeit Drugs</h4>
@@ -84,6 +80,12 @@ const About = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+          
+          <div className="text-center">
+            <p className="text-lg sm:text-xl md:text-2xl text-zenblock-charcoal font-medium max-w-4xl mx-auto">
+              We exist to restore trust and transparency to regulated supply chains through blockchain integrity.
+            </p>
           </div>
         </div>
 

@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="bg-zenblock-pure-white min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="bg-gradient-to-b from-zenblock-mint-whisper to-zenblock-pure-white min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in space-y-6 sm:space-y-8 pt-16 sm:pt-20 md:pt-24">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-zenblock-charcoal mb-4 sm:mb-6 leading-tight">
@@ -33,7 +33,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl lg:text-[1.25rem] text-zenblock-medium-grey mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-            End-to-end traceability for supply chains—ensuring compliance and trust.
+            End-to-end blockchain traceability for regulated supply chains — from pharma to agri and beyond.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4 sm:px-0">
@@ -65,7 +65,7 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2 animate-fade-in">100%</div>
-                <div className="text-zenblock-medium-grey text-xs sm:text-sm">Supply Traceability</div>
+                <div className="text-zenblock-medium-grey text-xs sm:text-sm">Product Traceability</div>
               </div>
               
               <div className="text-center group hover:scale-105 transition-transform duration-300">
@@ -75,7 +75,7 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2 animate-fade-in" style={{ animationDelay: '0.1s' }}>3+</div>
-                <div className="text-zenblock-medium-grey text-xs sm:text-sm">Countries Compliant</div>
+                <div className="text-zenblock-medium-grey text-xs sm:text-sm">Regulatory Regions Aligned</div>
               </div>
               
               <div className="text-center group hover:scale-105 transition-transform duration-300">
