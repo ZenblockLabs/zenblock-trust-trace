@@ -47,7 +47,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl lg:text-[1.25rem] text-zenblock-medium-grey mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-            End-to-end traceability for pharmaceutical supply chains—ensuring compliance and trust.
+            End-to-end traceability for supply chains—ensuring compliance and trust.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4 sm:px-0">
