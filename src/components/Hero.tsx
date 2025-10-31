@@ -21,7 +21,7 @@ const Hero = () => {
   return (
     <section id="home" className="bg-gradient-to-b from-zenblock-mint-whisper to-zenblock-pure-white min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fade-in space-y-6 sm:space-y-8 pt-16 sm:pt-20 md:pt-24">
+        <div className="animate-fade-in space-y-6 sm:space-y-8 pt-24 sm:pt-28 md:pt-32">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-zenblock-charcoal mb-4 sm:mb-6 leading-tight">
             <span className="flex flex-col space-y-2 sm:space-y-4 md:space-y-6">
               <span>Enabling Trust in</span>
