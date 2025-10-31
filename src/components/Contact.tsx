@@ -103,21 +103,18 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-zenblock-soft-mint">
+    <section id="contact" className="py-20 bg-zenblock-cool-grey">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-zenblock-primary-text mb-6">
-            Contact Us
-          </h2>
-          <p className="text-xl text-zenblock-secondary-text max-w-3xl mx-auto">
-            We're here to help. Get in touch with our team to discuss your
-            pharmaceutical supply chain needs.
+          <h2 className="text-4xl font-bold text-zenblock-deep-forest mb-4">Get in Touch</h2>
+          <p className="text-xl text-zenblock-medium-grey">
+            Ready to transform your supply chain? Let's talk.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
-            <Card className="bg-zenblock-white">
+            <Card className="bg-white border border-zenblock-border-grey">
               <CardContent className="p-8">
                 <form onSubmit={handlesubmit} className="space-y-6">
                   <Input
@@ -127,7 +124,7 @@ const Contact = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
-                    className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text ${PLACEHOLDER_STYLE}`}
+                    className="bg-white border border-zenblock-border-grey text-zenblock-charcoal"
                   />
                   <Input
                     type="email"
@@ -136,7 +133,7 @@ const Contact = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text ${PLACEHOLDER_STYLE}`}
+                    className="bg-white border border-zenblock-border-grey text-zenblock-charcoal"
                   />
                   <Input
                     type="text"
@@ -144,7 +141,7 @@ const Contact = () => {
                     placeholder="Your Company"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
-                    className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text ${PLACEHOLDER_STYLE}`}
+                    className="bg-white border border-zenblock-border-grey text-zenblock-charcoal"
                   />
                   <Textarea
                     name="message"
@@ -153,12 +150,12 @@ const Contact = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     required
-                    className={`bg-zenblock-soft-mint border-none text-zenblock-primary-text resize-none ${PLACEHOLDER_STYLE}`}
+                    className="bg-white border border-zenblock-border-grey text-zenblock-charcoal resize-none"
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-zenblock-leaf-green text-zenblock-white hover:bg-zenblock-leaf-green/90"
-                    disabled={isSubmitting} // Keep this disabled while submitting
+                    className="w-full bg-zenblock-professional-green text-white hover:bg-zenblock-fresh-green font-semibold rounded-full"
+                    disabled={isSubmitting}
                   >
                     Send Message
                   </Button>

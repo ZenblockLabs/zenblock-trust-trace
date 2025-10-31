@@ -68,14 +68,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 			zenblock: {
-				'deep-green': '#002D00',
-				'leaf-green': '#4E9013',
-				'light-green': '#AED581',
-				'white': '#FFFFFF',
-				'light-gray': '#CFCFCF',
-				'primary-text': '#002D00',
-				'secondary-text': '#4A4A4A',
-				'inverse-text': '#FFFFFF'
+				'deep-forest': '#0A4D2E',
+				'professional-green': '#107C41',
+				'fresh-green': '#34D399',
+				'mint-whisper': '#ECFDF5',
+				'pure-white': '#FFFFFF',
+				'cool-grey': '#F5F7FA',
+				'border-grey': '#E8ECEF',
+				'charcoal': '#1F2937',
+				'medium-grey': '#6B7280'
 			}
 			},
 			borderRadius: {

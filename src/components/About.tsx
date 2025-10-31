@@ -5,22 +5,22 @@ import { Shield, Target, Users, Lightbulb } from "lucide-react";
 const About = () => {
   const values = [
     {
-      icon: <Shield className="w-8 h-8 text-zenblock-leaf-green" />,
+      icon: Shield,
       title: "Trust",
       description: "Building unshakeable confidence in every transaction"
     },
     {
-      icon: <Target className="w-8 h-8 text-zenblock-leaf-green" />,
+      icon: Target,
       title: "Transparency",
       description: "Complete visibility across the entire supply chain"
     },
     {
-      icon: <Users className="w-8 h-8 text-zenblock-leaf-green" />,
+      icon: Users,
       title: "Integrity",
       description: "Honest, ethical practices in everything we do"
     },
     {
-      icon: <Lightbulb className="w-8 h-8 text-zenblock-leaf-green" />,
+      icon: Lightbulb,
       title: "Innovation",
       description: "Cutting-edge technology for tomorrow's challenges"
     }
@@ -48,98 +48,97 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-zenblock-pure-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl lg:text-[2rem] font-bold text-zenblock-primary-text mb-6">
-            About Zenblock Labs
-          </h2>
-          <p className="text-lg md:text-xl lg:text-[1.125rem] text-zenblock-secondary-text max-w-3xl mx-auto">
-            Our vision is to ensure and assure that every business operates on trust. 
-            We're solving the critical challenges of counterfeits, compliance gaps, 
-            and supply chain fragmentation in regulated industries.
+          <h2 className="text-4xl font-bold text-zenblock-deep-forest mb-4">About Zenblock Labs</h2>
+          <p className="text-xl text-zenblock-medium-grey max-w-3xl mx-auto">
+            Building the future of pharmaceutical supply chain integrity through blockchain technology
           </p>
         </div>
 
-        {/* Problem Statement */}
-        <div className="mb-16">
-          <h3 className="text-3xl lg:text-[2rem] font-bold text-center text-zenblock-primary-text mb-12">The Problem We Solve</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="bg-zenblock-white shadow-lg border border-zenblock-light-gray">
-              <CardContent className="p-6 text-center">
-                <h4 className="font-bold text-zenblock-primary-text mb-2 text-[1.125rem]">Counterfeiting</h4>
-                <p className="text-zenblock-secondary-text text-[1rem]">$200B+ annual losses from fake pharmaceuticals globally</p>
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-zenblock-deep-forest mb-8 text-center">The Problem We Solve</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-l-4 border-zenblock-professional-green bg-white hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <h4 className="text-xl font-bold text-zenblock-charcoal mb-3">Counterfeit Drugs</h4>
+                <p className="text-zenblock-medium-grey">
+                  Drug counterfeiting costs the pharmaceutical industry billions annually and puts patient safety at risk.
+                </p>
               </CardContent>
             </Card>
-            <Card className="bg-zenblock-white shadow-lg border border-zenblock-light-gray">
-              <CardContent className="p-6 text-center">
-                <h4 className="font-bold text-zenblock-primary-text mb-2 text-[1.125rem]">Compliance Gaps</h4>
-                <p className="text-zenblock-secondary-text text-[1rem]">Complex regulatory requirements across multiple jurisdictions</p>
+            <Card className="border-l-4 border-zenblock-professional-green bg-white hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <h4 className="text-xl font-bold text-zenblock-charcoal mb-3">Supply Chain Opacity</h4>
+                <p className="text-zenblock-medium-grey">
+                  Lack of visibility makes it difficult to track drug provenance and ensure regulatory compliance.
+                </p>
               </CardContent>
             </Card>
-            <Card className="bg-zenblock-white shadow-lg border border-zenblock-light-gray">
-              <CardContent className="p-6 text-center">
-                <h4 className="font-bold text-zenblock-primary-text mb-2 text-[1.125rem]">Fragmentation</h4>
-                <p className="text-zenblock-secondary-text text-[1rem]">Lack of visibility and coordination across supply chain partners</p>
+            <Card className="border-l-4 border-zenblock-professional-green bg-white hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <h4 className="text-xl font-bold text-zenblock-charcoal mb-3">Regulatory Complexity</h4>
+                <p className="text-zenblock-medium-grey">
+                  Different countries have varying regulations, making multi-market compliance challenging.
+                </p>
               </CardContent>
             </Card>
           </div>
         </div>
 
-        {/* Core Values */}
-        <div className="mb-16">
-          <h3 className="text-3xl lg:text-[2rem] font-bold text-center text-zenblock-primary-text mb-12">Our Core Values</h3>
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-zenblock-deep-forest mb-8 text-center">Our Core Values</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <Card key={index} className="text-center card-hover bg-zenblock-white">
+              <Card key={index} className="text-center bg-white border border-zenblock-border-grey hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-4">
-                    {value.icon}
+                    <value.icon className="w-8 h-8 text-zenblock-professional-green" />
                   </div>
-                  <h4 className="text-xl font-semibold text-zenblock-primary-text mb-2 text-[1rem]">{value.title}</h4>
-                  <p className="text-zenblock-secondary-text text-[1rem]">{value.description}</p>
+                  <h4 className="text-lg font-bold text-zenblock-charcoal mb-2">{value.title}</h4>
+                  <p className="text-sm text-zenblock-medium-grey">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
 
-        {/* Milestones */}
-        <div className="mb-16">
-          <h3 className="text-3xl lg:text-[2rem] font-bold text-center text-zenblock-primary-text mb-12">Our Journey</h3>
-          <div className="space-y-6">
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-zenblock-deep-forest mb-8 text-center">Our Journey</h3>
+          <div className="max-w-3xl mx-auto space-y-6">
             {milestones.map((milestone, index) => (
-              <div key={index} className="flex items-start space-x-4 animate-slide-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="flex-shrink-0 w-16 h-16 bg-zenblock-leaf-green text-zenblock-white rounded-full flex items-center justify-center font-bold">
-                  {milestone.year}
+              <div key={index} className="flex gap-4">
+                <div className="flex-shrink-0 w-20 text-right">
+                  <span className="text-2xl font-bold text-zenblock-professional-green">{milestone.year}</span>
                 </div>
-                <div>
-                  <h4 className="text-xl font-semibold text-zenblock-primary-text mb-1 text-[1rem]">{milestone.title}</h4>
-                  <p className="text-zenblock-secondary-text text-[1rem]">{milestone.description}</p>
+                <div className="flex-grow border-l-2 border-zenblock-border-grey pl-6 pb-6">
+                  <h4 className="text-xl font-bold text-zenblock-charcoal mb-2">{milestone.title}</h4>
+                  <p className="text-zenblock-medium-grey">{milestone.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Core Team */}
         <div>
-          <h3 className="text-3xl lg:text-[2rem] font-bold text-center text-zenblock-primary-text mb-12">Meet Our Core Team</h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <h3 className="text-3xl font-bold text-zenblock-deep-forest mb-8 text-center">Meet Our Team</h3>
+          <div className="grid md:grid-cols-2 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="bg-zenblock-white card-hover border border-zenblock-light-gray">
+              <Card key={index} className="overflow-hidden bg-white border border-zenblock-border-grey hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <div className="flex flex-col items-center text-center mb-4">
+                  <div className="flex gap-4 items-start">
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-24 h-24 rounded-full object-cover mb-4 border-3 border-zenblock-leaf-green"
+                      className="w-24 h-24 rounded-full object-cover"
                     />
-                    <h4 className="text-xl font-bold text-zenblock-primary-text mb-1">{member.name}</h4>
-                    <h5 className="text-md font-semibold text-zenblock-leaf-green mb-3">{member.role}</h5>
+                    <div className="flex-grow">
+                      <h4 className="text-xl font-bold text-zenblock-charcoal mb-1">{member.name}</h4>
+                      <p className="text-zenblock-professional-green font-semibold mb-2">{member.role}</p>
+                      <p className="text-sm text-zenblock-medium-grey">{member.background}</p>
+                    </div>
                   </div>
-                  <p className="text-zenblock-secondary-text text-sm text-center">{member.background}</p>
                 </CardContent>
               </Card>
             ))}

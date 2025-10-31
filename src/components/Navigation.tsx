@@ -52,7 +52,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-zenblock-white/95 backdrop-blur-sm border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-zenblock-deep-forest shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -66,7 +66,7 @@ const Navigation = () => {
                 alt="Zenblock Labs Logo" 
                 className="h-10 w-10"
               />
-              <span className="text-2xl font-bold text-zenblock-deep-green">
+              <span className="text-2xl font-bold text-white">
                 Zenblock Labs
               </span>
             </button>
@@ -79,7 +79,7 @@ const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-zenblock-secondary-text hover:text-zenblock-leaf-green px-3 py-2 rounded-md text-[1rem] font-medium transition-colors duration-200"
+                  className="text-white hover:text-zenblock-fresh-green px-3 py-2 rounded-md text-[1rem] font-medium transition-colors duration-200"
                 >
                   {item.label}
                 </button>
@@ -91,7 +91,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <Button 
               onClick={handleBookDemo}
-              className="bg-zenblock-leaf-green hover:bg-zenblock-leaf-green/90 text-zenblock-white text-[1rem]"
+              className="bg-white text-zenblock-deep-forest hover:bg-zenblock-fresh-green hover:text-white text-[1rem] font-semibold rounded-full"
             >
               Book a Demo
             </Button>
@@ -103,6 +103,7 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white hover:text-zenblock-fresh-green"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
@@ -112,12 +113,12 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-zenblock-white border-t border-gray-200">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-zenblock-deep-forest border-t border-zenblock-professional-green/30">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-zenblock-secondary-text hover:text-zenblock-leaf-green block px-3 py-2 rounded-md text-[1rem] font-medium w-full text-left"
+                  className="text-white hover:text-zenblock-fresh-green block px-3 py-2 rounded-md text-[1rem] font-medium w-full text-left"
                 >
                   {item.label}
                 </button>
@@ -125,7 +126,7 @@ const Navigation = () => {
               <div className="pt-2">
                 <Button 
                   onClick={handleBookDemo}
-                  className="w-full bg-zenblock-leaf-green hover:bg-zenblock-leaf-green/90 text-zenblock-white text-[1rem]"
+                  className="w-full bg-white text-zenblock-deep-forest hover:bg-zenblock-fresh-green hover:text-white text-[1rem] font-semibold rounded-full"
                 >
                   Book a Demo
                 </Button>

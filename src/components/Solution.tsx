@@ -1,7 +1,7 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Pill, Truck, Hospital, Smartphone, Shield, Search } from "lucide-react";
+import { Pill, Truck, Hospital, Smartphone, Shield, Search, ArrowRight, FileCheck } from "lucide-react";
 
 const Solution = () => {
   const scrollToContact = () => {
@@ -13,133 +13,104 @@ const Solution = () => {
 
   const features = [
     {
-      icon: <Pill className="w-8 h-8 text-zenblock-leaf-green" />,
+      icon: Pill,
       title: "Drug Registration",
       description: "Secure registration of pharmaceutical products with unique digital identities on the blockchain"
     },
     {
-      icon: <Truck className="w-8 h-8 text-zenblock-leaf-green" />,
+      icon: Truck,
       title: "Event Logging",
       description: "Complete tracking from manufacturing through distribution to final dispensing"
     },
     {
-      icon: <Search className="w-8 h-8 text-zenblock-leaf-green" />,
+      icon: Search,
       title: "Real-time Traceability",
       description: "Instant visibility into product location, condition, and custody chain"
     },
     {
-      icon: <Smartphone className="w-8 h-8 text-zenblock-leaf-green" />,
+      icon: Smartphone,
       title: "QR Code Verification",
       description: "End customers can verify product authenticity by scanning QR codes"
     },
     {
-      icon: <Shield className="w-8 h-8 text-zenblock-leaf-green" />,
+      icon: Shield,
       title: "Audit Logs",
       description: "Immutable records for regulatory compliance and audit requirements"
     },
     {
-      icon: <Hospital className="w-8 h-8 text-zenblock-leaf-green" />,
+      icon: Hospital,
       title: "Recall Management",
       description: "Rapid identification and tracking of products for recalls and spoilage"
     }
   ];
 
-  const techStack = [
-    { name: "Hyperledger Fabric", description: "Permissioned blockchain for enterprise security" },
-    { name: "Supabase", description: "Real-time database and authentication" },
-    { name: "React", description: "Modern web interface for all stakeholders" },
-    { name: "Mobile Apps", description: "iOS and Android apps for field operations" }
+  const steps = [
+    { step: "1", title: "Manufacturing", description: "Product registered on blockchain", icon: Pill },
+    { step: "2", title: "Distribution", description: "Each transfer logged securely", icon: Truck },
+    { step: "3", title: "Retail/Hospital", description: "Arrival and storage tracked", icon: Hospital },
+    { step: "4", title: "Consumer", description: "Authenticity verified via QR", icon: FileCheck }
   ];
 
   return (
-    <section id="solution" className="py-20 bg-zenblock-white">
+    <section id="solution" className="py-20 bg-zenblock-cool-grey">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-zenblock-primary-text mb-6">
-            Our Solution
-          </h2>
-          <p className="text-xl text-zenblock-secondary-text max-w-3xl mx-auto">
-            End-to-end drug traceability powered by blockchain technology, 
-            providing complete visibility and trust across the pharmaceutical supply chain.
+          <h2 className="text-4xl font-bold text-zenblock-deep-forest mb-4">Our Solution</h2>
+          <p className="text-xl text-zenblock-medium-grey max-w-3xl mx-auto">
+            Comprehensive blockchain-powered traceability platform for pharmaceutical supply chains
           </p>
         </div>
 
-        {/* Key Features */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-zenblock-primary-text mb-12">Key Features</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <Card key={index} className="card-hover bg-zenblock-white">
-                <CardHeader>
-                  <div className="flex items-center space-x-3">
-                    {feature.icon}
-                    <CardTitle className="text-xl text-zenblock-primary-text">{feature.title}</CardTitle>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {features.map((feature, index) => (
+            <Card key={index} className="bg-white hover:shadow-lg transition-shadow border-l-4 border-zenblock-professional-green">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <feature.icon className="w-8 h-8 text-zenblock-professional-green" />
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-zenblock-secondary-text">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-zenblock-charcoal mb-2">{feature.title}</h3>
+                    <p className="text-zenblock-medium-grey">{feature.description}</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
-        {/* How It Works */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-zenblock-primary-text mb-12">How It Works</h3>
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full h-1 bg-gradient-to-r from-zenblock-deep-green to-zenblock-leaf-green"></div>
-            </div>
-            <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { step: "1", title: "Manufacturing", desc: "Product registered on blockchain" },
-                { step: "2", title: "Distribution", desc: "Each transfer logged securely" },
-                { step: "3", title: "Retail/Hospital", desc: "Arrival and storage tracked" },
-                { step: "4", title: "Consumer", desc: "Authenticity verified via QR" }
-              ].map((item, index) => (
+        <Card className="bg-white border border-zenblock-border-grey mb-16">
+          <CardContent className="p-8">
+            <h3 className="text-2xl font-bold text-zenblock-deep-forest mb-6 text-center">How It Works</h3>
+            <div className="grid md:grid-cols-4 gap-6">
+              {steps.map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-zenblock-leaf-green text-zenblock-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                    {item.step}
+                  <div className="w-16 h-16 rounded-full bg-zenblock-mint-whisper flex items-center justify-center mx-auto mb-4">
+                    <step.icon className="w-8 h-8 text-zenblock-professional-green" />
                   </div>
-                  <h4 className="text-lg font-semibold text-zenblock-primary-text mb-2">{item.title}</h4>
-                  <p className="text-zenblock-secondary-text">{item.desc}</p>
+                  <div className="text-2xl font-bold text-zenblock-professional-green mb-2">{step.step}</div>
+                  <h4 className="font-bold text-zenblock-charcoal mb-2">{step.title}</h4>
+                  <p className="text-sm text-zenblock-medium-grey">{step.description}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
 
-        {/* Technology Stack */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-zenblock-primary-text mb-12">Technology Stack</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {techStack.map((tech, index) => (
-              <Card key={index} className="text-center card-hover bg-zenblock-white">
-                <CardContent className="p-6">
-                  <h4 className="text-lg font-semibold text-zenblock-primary-text mb-2">{tech.name}</h4>
-                  <p className="text-zenblock-secondary-text">{tech.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA */}
         <div className="text-center">
-          <Card className="bg-gradient-to-r from-zenblock-deep-green to-zenblock-leaf-green text-zenblock-white">
+          <Card className="bg-zenblock-mint-whisper border-l-4 border-zenblock-professional-green">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Supply Chain?</h3>
-              <p className="text-zenblock-inverse-text/90 mb-6">
+              <h3 className="text-2xl font-bold text-zenblock-charcoal mb-4">Ready to Transform Your Supply Chain?</h3>
+              <p className="text-zenblock-medium-grey mb-6 max-w-2xl mx-auto">
                 See how our blockchain solution can enhance trust and compliance in your operations.
               </p>
               <Button 
                 size="lg" 
                 onClick={scrollToContact}
-                className="bg-zenblock-white text-zenblock-deep-green hover:bg-zenblock-white/90"
+                className="bg-zenblock-professional-green text-white hover:bg-zenblock-fresh-green font-semibold rounded-full px-8"
               >
                 Schedule a Demo
+                <ArrowRight className="ml-2" size={18} />
               </Button>
             </CardContent>
           </Card>

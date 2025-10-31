@@ -1,6 +1,6 @@
 
-import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
+import { Linkedin, Twitter, Github } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -12,28 +12,22 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { name: "About Us", href: "/about-us", isExternal: false },
-      { name: "Our Team", href: "/team", isExternal: false },
-      { name: "Careers", href: "/careers", isExternal: false },
-      { name: "News", href: "/news", isExternal: false }
-    ],
-    product: [
-      { name: "Solution", href: "/#solution", isExternal: false, isAnchor: true },
-      { name: "Industries", href: "/#industries", isExternal: false, isAnchor: true },
-      { name: "Compliance", href: "/#compliance", isExternal: false, isAnchor: true },
-      { name: "Documentation", href: "/api-docs", isExternal: false }
+      { name: "About", href: "/#about", isAnchor: true },
+      { name: "Solution", href: "/#solution", isAnchor: true },
+      { name: "Industries", href: "/#industries", isAnchor: true },
+      { name: "Compliance", href: "/#compliance", isAnchor: true }
     ],
     resources: [
-      { name: "Case Studies", href: "/case-studies", isExternal: false },
-      { name: "Blog", href: "/blog", isExternal: false },
-      { name: "Whitepapers", href: "/whitepapers", isExternal: false },
-      { name: "API Docs", href: "/api-docs", isExternal: false }
+      { name: "Case Studies", href: "/case-studies" },
+      { name: "Blog", href: "/blog" },
+      { name: "Whitepapers", href: "/whitepapers" },
+      { name: "Careers", href: "/careers" }
     ],
     legal: [
-      { name: "Privacy Policy", href: "/privacy-policy", isExternal: false },
-      { name: "Terms of Service", href: "/terms-of-service", isExternal: false },
-      { name: "Cookie Policy", href: "/cookie-policy", isExternal: false },
-      { name: "GDPR", href: "/gdpr", isExternal: false }
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms of Service", href: "/terms-of-service" },
+      { name: "Cookie Policy", href: "/cookie-policy" },
+      { name: "GDPR", href: "/gdpr" }
     ]
   };
 
@@ -49,129 +43,62 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-zenblock-deep-green text-zenblock-inverse-text">
+    <footer className="bg-zenblock-deep-forest border-t border-zenblock-professional-green/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="text-2xl font-bold text-zenblock-white mb-4">
-              Zenblock Labs
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-zenblock-professional-green rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold">Z</span>
+              </div>
+              <span className="text-xl font-bold text-white">Zenblock Labs</span>
             </div>
-            <p className="text-zenblock-inverse-text/80 mb-6 max-w-md text-[1rem]">
-              Enabling trust in regulated supply chains through blockchain technology. 
-              Building the future of pharmaceutical traceability and compliance.
+            <p className="text-zenblock-cool-grey text-sm">
+              Building trust in pharmaceutical supply chains through blockchain technology.
             </p>
-            <div className="text-sm text-zenblock-inverse-text/70">
-              <p>Hyderabad, India</p>
-              <p className="mt-2">info@zenblocklabs.com</p>
+          </div>
+
+          {Object.entries(footerLinks).map(([category, links]) => (
+            <div key={category}>
+              <h4 className="font-semibold text-white mb-4 capitalize">{category}</h4>
+              <ul className="space-y-2">
+                {links.map((link) => (
+                  <li key={link.name}>
+                    {link.isAnchor ? (
+                      <button
+                        onClick={() => handleLinkClick(link)}
+                        className="text-zenblock-cool-grey hover:text-zenblock-fresh-green text-sm transition-colors duration-200 text-left"
+                      >
+                        {link.name}
+                      </button>
+                    ) : (
+                      <Link 
+                        to={link.href}
+                        className="text-zenblock-cool-grey hover:text-zenblock-fresh-green text-sm transition-colors duration-200"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-
-          {/* Footer Links */}
-          <div>
-            <h3 className="text-zenblock-white font-semibold mb-4 text-[1rem]">Company</h3>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link, index) => (
-                <li key={index}>
-                  <Link 
-                    to={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-zenblock-white font-semibold mb-4 text-[1rem]">Product</h3>
-            <ul className="space-y-2">
-              {footerLinks.product.map((link, index) => (
-                <li key={index}>
-                  {link.isAnchor ? (
-                    <button
-                      onClick={() => handleLinkClick(link)}
-                      className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem] text-left"
-                    >
-                      {link.name}
-                    </button>
-                  ) : (
-                    <Link 
-                      to={link.href} 
-                      className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
-                    >
-                      {link.name}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-zenblock-white font-semibold mb-4 text-[1rem]">Resources</h3>
-            <ul className="space-y-2">
-              {footerLinks.resources.map((link, index) => (
-                <li key={index}>
-                  <Link 
-                    to={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-zenblock-white font-semibold mb-4 text-[1rem]">Legal</h3>
-            <ul className="space-y-2">
-              {footerLinks.legal.map((link, index) => (
-                <li key={index}>
-                  <Link 
-                    to={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          ))}
         </div>
 
-        <Separator className="my-8 bg-zenblock-inverse-text/20" />
-
-        {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-zenblock-inverse-text/70 text-[0.875rem]">
-            © 2024 Zenblock Labs. All rights reserved.
-          </div>
-          
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a 
-              href="#" 
-              className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
-              aria-label="LinkedIn"
-            >
-              LinkedIn
+        <div className="border-t border-zenblock-professional-green/30 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-zenblock-cool-grey text-sm mb-4 md:mb-0">
+            © 2025 Zenblock Labs. All rights reserved.
+          </p>
+          <div className="flex space-x-6">
+            <a href="#" className="text-zenblock-cool-grey hover:text-zenblock-fresh-green transition-colors duration-200">
+              <Linkedin size={20} />
             </a>
-            <a 
-              href="#" 
-              className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
-              aria-label="Twitter"
-            >
-              Twitter
+            <a href="#" className="text-zenblock-cool-grey hover:text-zenblock-fresh-green transition-colors duration-200">
+              <Twitter size={20} />
             </a>
-            <a 
-              href="#" 
-              className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
-              aria-label="GitHub"
-            >
-              GitHub
+            <a href="#" className="text-zenblock-cool-grey hover:text-zenblock-fresh-green transition-colors duration-200">
+              <Github size={20} />
             </a>
           </div>
         </div>
