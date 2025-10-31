@@ -20,6 +20,20 @@ const Hero = () => {
 
   return (
     <section id="home" className="bg-zenblock-pure-white min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Subtle blockchain flow background */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="blockchain-grid" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+              <circle cx="50" cy="50" r="2" fill="currentColor" className="text-zenblock-professional-green"/>
+              <line x1="50" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="1" className="text-zenblock-professional-green"/>
+              <line x1="50" y1="50" x2="50" y2="100" stroke="currentColor" strokeWidth="1" className="text-zenblock-professional-green"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#blockchain-grid)"/>
+        </svg>
+      </div>
+      
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in space-y-6 sm:space-y-8 pt-16 sm:pt-20 md:pt-24">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-zenblock-charcoal mb-4 sm:mb-6 leading-tight">
@@ -33,15 +47,14 @@ const Hero = () => {
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl lg:text-[1.25rem] text-zenblock-medium-grey mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-            Zenblock Labs provides end-to-end traceability solutions for pharmaceutical supply chains, 
-            ensuring regulatory compliance and building trust between all stakeholders.
+            End-to-end traceability for pharmaceutical supply chains—ensuring compliance and trust.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4 sm:px-0">
             <Button 
               size="lg" 
               onClick={handleBookDemo}
-              className="bg-zenblock-professional-green text-white hover:bg-zenblock-fresh-green text-base sm:text-[1rem] px-6 sm:px-8 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto min-h-[44px] sm:min-h-[56px]"
+              className="bg-zenblock-professional-green text-white hover:bg-zenblock-fresh-green hover:scale-105 text-base sm:text-[1rem] px-6 sm:px-8 rounded-full font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 w-full sm:w-auto min-h-[44px] sm:min-h-[56px]"
             >
               Book a Demo
             </Button>
