@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import logo from "@/assets/zenblock-logo.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,16 +60,13 @@ const Navigation = () => {
           <div className="flex-shrink-0">
             <button
               onClick={handleLogoClick}
-              className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity"
+              className="hover:opacity-80 transition-opacity"
             >
               <img 
-                src="/lovable-uploads/ce5f1560-0ad9-4099-a10e-dce142421f2c.png" 
+                src={logo} 
                 alt="Zenblock Labs Logo" 
-                className="h-8 w-8 sm:h-10 sm:w-10"
+                className="h-10 sm:h-12"
               />
-              <span className="text-xl sm:text-2xl font-bold text-zenblock-charcoal">
-                Zenblock <span className="hidden xs:inline">Labs</span>
-              </span>
             </button>
           </div>
 

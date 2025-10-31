@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Github } from "lucide-react";
+import logo from "@/assets/zenblock-logo.png";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -47,11 +48,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-zenblock-professional-green rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">Z</span>
-              </div>
-              <span className="text-xl font-bold text-white">Zenblock Labs</span>
+            <div className="mb-4">
+              <img 
+                src={logo} 
+                alt="Zenblock Labs Logo" 
+                className="h-10"
+              />
             </div>
             <p className="text-zenblock-cool-grey text-sm">
               Building trust in pharmaceutical supply chains through blockchain technology.
