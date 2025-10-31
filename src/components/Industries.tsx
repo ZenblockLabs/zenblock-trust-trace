@@ -1,13 +1,16 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Pill, Leaf, Battery, Gem, CheckCircle2 } from "lucide-react";
+import { Pill, Leaf, Gem, CheckCircle2 } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Industries = () => {
   const industries = [
     {
+      id: "pharma",
       icon: Pill,
-      name: "Pharmaceuticals",
-      description: "Our primary focus: transforming pharmaceutical supply chains with blockchain traceability.",
+      name: "Pharma",
+      tagline: "Trace every vial.",
+      description: "Transforming pharmaceutical supply chains with blockchain traceability.",
       benefits: [
         "Prevent counterfeit drugs from entering the market",
         "Ensure regulatory compliance across borders",
@@ -16,8 +19,10 @@ const Industries = () => {
       ]
     },
     {
+      id: "agri",
       icon: Leaf,
-      name: "Agriculture & Food",
+      name: "Agri",
+      tagline: "Track every crop.",
       description: "Farm-to-table traceability for food safety and organic certification.",
       benefits: [
         "Track produce from farm to consumer",
@@ -25,19 +30,19 @@ const Industries = () => {
         "Manage cold chain compliance",
         "Enable rapid contamination response"
       ]
-    }
-  ];
-
-  const futureIndustries = [
-    {
-      icon: Battery,
-      title: "Battery-as-a-Service",
-      description: "Tracking battery lifecycle, performance, and recycling"
     },
     {
+      id: "luxury",
       icon: Gem,
-      title: "Luxury Goods",
-      description: "Authenticity verification for high-value products"
+      name: "Luxury",
+      tagline: "Verify every creation.",
+      description: "Authenticity verification for high-value products and collectibles.",
+      benefits: [
+        "Prevent counterfeiting of premium goods",
+        "Provide digital certificates of authenticity",
+        "Track provenance and ownership history",
+        "Build consumer trust and brand value"
+      ]
     }
   ];
 
@@ -47,35 +52,53 @@ const Industries = () => {
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold text-zenblock-deep-forest mb-4">Industries We Serve</h2>
           <p className="text-xl text-zenblock-medium-grey max-w-3xl mx-auto">
-            Tailored solutions for different sectors of the pharmaceutical industry
+            Blockchain traceability across regulated supply chains
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {industries.map((industry, index) => (
-            <Card key={index} className="bg-white border border-zenblock-border-grey hover:shadow-lg transition-shadow">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="flex-shrink-0">
-                    <industry.icon className="w-10 h-10 text-zenblock-professional-green" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-zenblock-charcoal mb-2">{industry.name}</h3>
-                    <p className="text-zenblock-medium-grey mb-4">{industry.description}</p>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  {industry.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-zenblock-professional-green flex-shrink-0 mt-0.5" />
-                      <span className="text-zenblock-medium-grey">{benefit}</span>
+        <Tabs defaultValue="pharma" className="w-full">
+          <TabsList className="grid w-full grid-cols-3 mb-8 bg-zenblock-mint-whisper">
+            {industries.map((industry) => (
+              <TabsTrigger 
+                key={industry.id} 
+                value={industry.id}
+                className="data-[state=active]:bg-white data-[state=active]:text-zenblock-professional-green"
+              >
+                <industry.icon className="w-5 h-5 mr-2" />
+                <span className="hidden sm:inline">{industry.name}: </span>
+                <span className="font-semibold">{industry.tagline}</span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          
+          {industries.map((industry) => (
+            <TabsContent key={industry.id} value={industry.id}>
+              <Card className="bg-white border border-zenblock-border-grey">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="flex-shrink-0">
+                      <industry.icon className="w-12 h-12 text-zenblock-professional-green" strokeWidth={1.5} />
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                    <div>
+                      <h3 className="text-3xl font-bold text-zenblock-charcoal mb-2">
+                        {industry.name}: <span className="text-zenblock-professional-green">{industry.tagline}</span>
+                      </h3>
+                      <p className="text-lg text-zenblock-medium-grey">{industry.description}</p>
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {industry.benefits.map((benefit, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-zenblock-professional-green flex-shrink-0 mt-1" strokeWidth={1.5} />
+                        <span className="text-zenblock-medium-grey">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
           ))}
-        </div>
+        </Tabs>
       </div>
     </section>
   );

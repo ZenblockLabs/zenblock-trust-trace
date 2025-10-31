@@ -15,6 +15,7 @@ import Blog from "./pages/Blog";
 import Whitepapers from "./pages/Whitepapers";
 import ApiDocs from "./pages/ApiDocs";
 import Solutions from "./pages/Solutions";
+import Technology from "./pages/Technology";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/careers" element={<Careers />} />
           <Route path="/news" element={<News />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/technology" element={<Technology />} />
           
           {/* Resource Pages */}
           <Route path="/case-studies" element={<CaseStudies />} />
