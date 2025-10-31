@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Shield, Globe, Activity } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -56,18 +56,47 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto px-4 sm:px-0 bg-zenblock-mint-whisper border border-zenblock-border-grey rounded-2xl p-6 sm:p-8">
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2">100%</div>
-              <div className="text-zenblock-medium-grey text-xs sm:text-sm">Drug Traceability</div>
+          <div className="bg-zenblock-mint-whisper border border-zenblock-border-grey rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto px-4 sm:px-0">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-6">
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="flex justify-center mb-3">
+                  <div className="p-3 bg-zenblock-professional-green/10 rounded-full group-hover:bg-zenblock-professional-green/20 transition-colors duration-300">
+                    <Shield className="w-6 h-6 text-zenblock-professional-green" />
+                  </div>
+                </div>
+                <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2 animate-fade-in">100%</div>
+                <div className="text-zenblock-medium-grey text-xs sm:text-sm">Supply Traceability</div>
+              </div>
+              
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="flex justify-center mb-3">
+                  <div className="p-3 bg-zenblock-professional-green/10 rounded-full group-hover:bg-zenblock-professional-green/20 transition-colors duration-300">
+                    <Globe className="w-6 h-6 text-zenblock-professional-green" />
+                  </div>
+                </div>
+                <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2 animate-fade-in" style={{ animationDelay: '0.1s' }}>3+</div>
+                <div className="text-zenblock-medium-grey text-xs sm:text-sm">Countries Compliant</div>
+              </div>
+              
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="flex justify-center mb-3">
+                  <div className="p-3 bg-zenblock-professional-green/10 rounded-full group-hover:bg-zenblock-professional-green/20 transition-colors duration-300">
+                    <Activity className="w-6 h-6 text-zenblock-professional-green" />
+                  </div>
+                </div>
+                <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>24/7</div>
+                <div className="text-zenblock-medium-grey text-xs sm:text-sm">Real-time Monitoring</div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2">3+</div>
-              <div className="text-zenblock-medium-grey text-xs sm:text-sm">Countries Compliant</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2">24/7</div>
-              <div className="text-zenblock-medium-grey text-xs sm:text-sm">Real-time Monitoring</div>
+            
+            <div className="text-center pt-4 border-t border-zenblock-border-grey">
+              <a 
+                href="/case-studies" 
+                className="inline-flex items-center text-sm text-zenblock-professional-green hover:text-zenblock-fresh-green font-medium transition-colors duration-300 group"
+              >
+                See how we measure it
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
             </div>
           </div>
         </div>
