@@ -108,7 +108,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-zenblock-deep-forest mb-4">Get in Touch</h2>
           <p className="text-xl text-zenblock-medium-grey">
-            Ready to transform your supply chain? Let's talk.
+            Let's bring trust to your supply chain.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12">
@@ -157,7 +157,7 @@ const Contact = () => {
                     className="w-full bg-zenblock-professional-green text-white hover:bg-zenblock-fresh-green font-semibold rounded-full"
                     disabled={isSubmitting}
                   >
-                    Send Message
+                    Schedule a Demo
                   </Button>
                 </form>
               </CardContent>

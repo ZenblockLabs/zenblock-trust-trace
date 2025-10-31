@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Linkedin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const ContactInfo = () => (
@@ -29,6 +29,22 @@ const ContactInfo = () => (
         <div>
           <h3 className="text-xl font-semibold text-zenblock-charcoal">Address</h3>
           <p className="text-zenblock-medium-grey">Hyderabad, India</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <div className="flex-shrink-0">
+          <Linkedin className="w-6 h-6 text-zenblock-professional-green" />
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold text-zenblock-charcoal">LinkedIn</h3>
+          <a 
+            href="https://linkedin.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-zenblock-professional-green hover:text-zenblock-fresh-green transition-colors"
+          >
+            Connect with us
+          </a>
         </div>
       </div>
       <div className="flex items-center gap-4">
