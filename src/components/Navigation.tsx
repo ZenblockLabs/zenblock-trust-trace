@@ -52,22 +52,22 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-zenblock-deep-forest shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-zenblock-border-grey">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <button
               onClick={handleLogoClick}
-              className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+              className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity"
             >
               <img 
                 src="/lovable-uploads/ce5f1560-0ad9-4099-a10e-dce142421f2c.png" 
                 alt="Zenblock Labs Logo" 
-                className="h-10 w-10"
+                className="h-8 w-8 sm:h-10 sm:w-10"
               />
-              <span className="text-2xl font-bold text-white">
-                Zenblock Labs
+              <span className="text-xl sm:text-2xl font-bold text-zenblock-charcoal">
+                Zenblock <span className="hidden xs:inline">Labs</span>
               </span>
             </button>
           </div>
@@ -79,7 +79,7 @@ const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-white hover:text-zenblock-fresh-green px-3 py-2 rounded-md text-[1rem] font-medium transition-colors duration-200"
+                  className="text-zenblock-charcoal hover:text-zenblock-professional-green px-3 py-2 rounded-md text-[1rem] font-medium transition-colors duration-200"
                 >
                   {item.label}
                 </button>
@@ -91,7 +91,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <Button 
               onClick={handleBookDemo}
-              className="bg-white text-zenblock-deep-forest hover:bg-zenblock-fresh-green hover:text-white text-[1rem] font-semibold rounded-full"
+              className="bg-zenblock-professional-green text-white hover:bg-zenblock-fresh-green text-[1rem] font-semibold rounded-full min-h-[44px]"
             >
               Book a Demo
             </Button>
@@ -103,7 +103,7 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-zenblock-fresh-green"
+              className="text-zenblock-charcoal hover:text-zenblock-professional-green min-h-[44px]"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
@@ -113,12 +113,12 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-zenblock-deep-forest border-t border-zenblock-professional-green/30">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-zenblock-border-grey">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-white hover:text-zenblock-fresh-green block px-3 py-2 rounded-md text-[1rem] font-medium w-full text-left"
+                  className="text-zenblock-charcoal hover:text-zenblock-professional-green block px-4 py-3 rounded-md text-[1rem] font-medium w-full text-left min-h-[44px]"
                 >
                   {item.label}
                 </button>
@@ -126,7 +126,7 @@ const Navigation = () => {
               <div className="pt-2">
                 <Button 
                   onClick={handleBookDemo}
-                  className="w-full bg-white text-zenblock-deep-forest hover:bg-zenblock-fresh-green hover:text-white text-[1rem] font-semibold rounded-full"
+                  className="w-full bg-zenblock-professional-green text-white hover:bg-zenblock-fresh-green text-[1rem] font-semibold rounded-full min-h-[44px]"
                 >
                   Book a Demo
                 </Button>
