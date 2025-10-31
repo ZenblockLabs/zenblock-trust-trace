@@ -36,7 +36,7 @@ const About = () => {
     {
       name: "Swetha Panda",
       role: "Founder, Zenblock Labs",
-      background: "MBA | 9+ Years of Industry Experience. Former Software Developer at IBM and Product Manager at RentenPe. Swetha combines deep technical know-how with strategic business insight.",
+      background: "MBA | 11+ Years of Industry Experience. Former Software Developer at IBM and Product Manager at RentenPe. Swetha combines deep technical know-how with strategic business insight.",
       image: "/lovable-uploads/05fb628d-0ac2-4497-95e0-899da9345a41.png"
     },
     {

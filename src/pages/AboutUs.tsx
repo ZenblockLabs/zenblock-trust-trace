@@ -38,7 +38,7 @@ const AboutUs = () => {
     {
       name: "Swetha Panda",
       role: "Founder, Zenblock Labs",
-      background: "MBA | 9+ Years of Industry Experience. Former Software Developer at IBM, where she honed her expertise in enterprise-grade tech architecture and security. Led product innovation as a Product Manager at RentenPe, a rising fintech startup, driving strategic roadmaps and scalable tech integrations. Swetha combines deep technical know-how with strategic business insight. Her mission with Zenblock Labs is to revolutionize the pharmaceutical supply chain using blockchain technology to ensure trust, traceability, and transparency.",
+      background: "MBA | 11+ Years of Industry Experience. Former Software Developer at IBM, where she honed her expertise in enterprise-grade tech architecture and security. Led product innovation as a Product Manager at RentenPe, a rising fintech startup, driving strategic roadmaps and scalable tech integrations. Swetha combines deep technical know-how with strategic business insight. Her mission with Zenblock Labs is to revolutionize the pharmaceutical supply chain using blockchain technology to ensure trust, traceability, and transparency.",
       expertise: "Enterprise Technology, Product Management",
       image: "/lovable-uploads/05fb628d-0ac2-4497-95e0-899da9345a41.png"
     },
