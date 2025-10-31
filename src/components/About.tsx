@@ -53,7 +53,7 @@ const About = () => {
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-zenblock-deep-forest mb-4 sm:mb-6">About Zenblock Labs</h2>
           <p className="text-base sm:text-lg md:text-xl text-zenblock-medium-grey max-w-3xl mx-auto">
-            Building the future of pharmaceutical supply chain integrity through blockchain technology
+            Building the future of supply chain integrity through blockchain technology
           </p>
         </div>
 
