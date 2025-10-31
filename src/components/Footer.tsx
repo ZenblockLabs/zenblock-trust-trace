@@ -49,7 +49,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-zenblock-dark-blue text-zenblock-inverse-text">
+    <footer className="bg-zenblock-deep-green text-zenblock-inverse-text">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
@@ -76,7 +76,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link 
                     to={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
+                    className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
                   >
                     {link.name}
                   </Link>
@@ -93,14 +93,14 @@ const Footer = () => {
                   {link.isAnchor ? (
                     <button
                       onClick={() => handleLinkClick(link)}
-                      className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem] text-left"
+                      className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem] text-left"
                     >
                       {link.name}
                     </button>
                   ) : (
                     <Link 
                       to={link.href} 
-                      className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
+                      className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
                     >
                       {link.name}
                     </Link>
@@ -117,7 +117,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link 
                     to={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
+                    className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
                   >
                     {link.name}
                   </Link>
@@ -133,7 +133,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link 
                     to={link.href} 
-                    className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
+                    className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
                   >
                     {link.name}
                   </Link>
@@ -154,21 +154,21 @@ const Footer = () => {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a 
               href="#" 
-              className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
+              className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
               aria-label="LinkedIn"
             >
               LinkedIn
             </a>
             <a 
               href="#" 
-              className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
+              className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
               aria-label="Twitter"
             >
               Twitter
             </a>
             <a 
               href="#" 
-              className="text-zenblock-inverse-text/70 hover:text-zenblock-electric-blue transition-colors duration-200 text-[1rem]"
+              className="text-zenblock-inverse-text/70 hover:text-zenblock-light-green transition-colors duration-200 text-[1rem]"
               aria-label="GitHub"
             >
               GitHub

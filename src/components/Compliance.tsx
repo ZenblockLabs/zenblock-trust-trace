@@ -71,7 +71,7 @@ const Compliance = () => {
   };
 
   return (
-    <section id="compliance" className="py-20 bg-zenblock-soft-violet">
+    <section id="compliance" className="py-20 bg-zenblock-light-gray/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
@@ -114,7 +114,7 @@ const Compliance = () => {
                     <div className="space-y-1">
                       {reg.features.map((feature, fIndex) => (
                         <div key={fIndex} className="flex items-center space-x-2 text-sm">
-                          <div className="w-1.5 h-1.5 bg-zenblock-electric-blue rounded-full"></div>
+                          <div className="w-1.5 h-1.5 bg-zenblock-leaf-green rounded-full"></div>
                           <span className="text-zenblock-secondary-text">{feature}</span>
                         </div>
                       ))}
@@ -134,12 +134,12 @@ const Compliance = () => {
               <Card key={index} className="card-hover bg-zenblock-white">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <Shield className="w-8 h-8 text-zenblock-electric-blue flex-shrink-0 mt-1" />
+                    <Shield className="w-8 h-8 text-zenblock-leaf-green flex-shrink-0 mt-1" />
                     <div className="flex-1">
                       <h4 className="text-xl lg:text-[1rem] font-semibold text-zenblock-primary-text mb-2">{standard.name}</h4>
                       <p className="text-zenblock-secondary-text mb-3 text-[1rem]">{standard.description}</p>
                       <div className="bg-zenblock-soft-mint p-3 rounded-lg">
-                        <div className="text-sm font-medium text-zenblock-electric-blue mb-1">Our Compliance</div>
+                        <div className="text-sm font-medium text-zenblock-leaf-green mb-1">Our Compliance</div>
                         <div className="text-sm text-zenblock-secondary-text">{standard.compliance}</div>
                       </div>
                     </div>
@@ -152,7 +152,7 @@ const Compliance = () => {
 
         {/* Future Roadmap */}
         <div>
-          <Card className="bg-gradient-to-r from-zenblock-dark-blue to-zenblock-electric-blue text-zenblock-white">
+          <Card className="bg-gradient-to-r from-zenblock-deep-green to-zenblock-leaf-green text-zenblock-white">
             <CardContent className="p-8">
               <div className="text-center mb-8">
                 <h3 className="text-2xl lg:text-[2rem] font-bold mb-4">Compliance Roadmap</h3>

@@ -92,7 +92,7 @@ const Contact = () => {
       <section id="contact" className="py-20 bg-zenblock-soft-mint">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center min-h-[400px]">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zenblock-electric-blue mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zenblock-leaf-green mb-4"></div>
             <p className="text-zenblock-primary-text text-lg">
               Sending your message...
             </p>
@@ -157,7 +157,7 @@ const Contact = () => {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-zenblock-electric-blue text-zenblock-white hover:bg-zenblock-electric-blue/90"
+                    className="w-full bg-zenblock-leaf-green text-zenblock-white hover:bg-zenblock-leaf-green/90"
                     disabled={isSubmitting} // Keep this disabled while submitting
                   >
                     Send Message
@@ -186,7 +186,7 @@ const Contact = () => {
             </p>
             <Button
               onClick={closeModal}
-              className="bg-zenblock-electric-blue text-white hover:bg-zenblock-electric-blue/90"
+              className="bg-zenblock-leaf-green text-white hover:bg-zenblock-leaf-green/90"
             >
               Close
             </Button>

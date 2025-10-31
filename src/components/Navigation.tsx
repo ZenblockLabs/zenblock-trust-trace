@@ -66,7 +66,7 @@ const Navigation = () => {
                 alt="Zenblock Labs Logo" 
                 className="h-10 w-10"
               />
-              <span className="text-2xl font-bold text-zenblock-dark-blue">
+              <span className="text-2xl font-bold text-zenblock-deep-green">
                 Zenblock Labs
               </span>
             </button>
@@ -79,7 +79,7 @@ const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-zenblock-secondary-text hover:text-zenblock-electric-blue px-3 py-2 rounded-md text-[1rem] font-medium transition-colors duration-200"
+                  className="text-zenblock-secondary-text hover:text-zenblock-leaf-green px-3 py-2 rounded-md text-[1rem] font-medium transition-colors duration-200"
                 >
                   {item.label}
                 </button>
@@ -91,7 +91,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <Button 
               onClick={handleBookDemo}
-              className="bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]"
+              className="bg-zenblock-leaf-green hover:bg-zenblock-leaf-green/90 text-zenblock-white text-[1rem]"
             >
               Book a Demo
             </Button>
@@ -117,7 +117,7 @@ const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-zenblock-secondary-text hover:text-zenblock-electric-blue block px-3 py-2 rounded-md text-[1rem] font-medium w-full text-left"
+                  className="text-zenblock-secondary-text hover:text-zenblock-leaf-green block px-3 py-2 rounded-md text-[1rem] font-medium w-full text-left"
                 >
                   {item.label}
                 </button>
@@ -125,7 +125,7 @@ const Navigation = () => {
               <div className="pt-2">
                 <Button 
                   onClick={handleBookDemo}
-                  className="w-full bg-zenblock-electric-blue hover:bg-zenblock-electric-blue/90 text-zenblock-white text-[1rem]"
+                  className="w-full bg-zenblock-leaf-green hover:bg-zenblock-leaf-green/90 text-zenblock-white text-[1rem]"
                 >
                   Book a Demo
                 </Button>

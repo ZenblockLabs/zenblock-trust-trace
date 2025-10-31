@@ -5,22 +5,22 @@ import { Shield, Eye, Handshake, Lock } from "lucide-react";
 const WhyBlockchain = () => {
   const benefits = [
     {
-      icon: <Shield className="w-10 h-10 text-zenblock-electric-blue" />,
+      icon: <Shield className="w-10 h-10 text-zenblock-leaf-green" />,
       title: "Tamper-Proof History",
       description: "Once data is recorded on the blockchain, it cannot be altered or deleted, ensuring complete integrity of your supply chain records."
     },
     {
-      icon: <Eye className="w-10 h-10 text-zenblock-electric-blue" />,
+      icon: <Eye className="w-10 h-10 text-zenblock-leaf-green" />,
       title: "Shared Visibility",
       description: "All authorized stakeholders have real-time access to the same information, eliminating information silos and improving coordination."
     },
     {
-      icon: <Handshake className="w-10 h-10 text-zenblock-electric-blue" />,
+      icon: <Handshake className="w-10 h-10 text-zenblock-leaf-green" />,
       title: "Trust Without Intermediaries",
       description: "Blockchain creates trust through mathematics and cryptography, not through reliance on central authorities or third parties."
     },
     {
-      icon: <Lock className="w-10 h-10 text-zenblock-electric-blue" />,
+      icon: <Lock className="w-10 h-10 text-zenblock-leaf-green" />,
       title: "Permissioned Access",
       description: "Unlike public blockchains, Hyperledger Fabric provides enterprise-grade privacy and access controls for sensitive business data."
     }
@@ -90,7 +90,7 @@ const WhyBlockchain = () => {
           <Card className="overflow-hidden bg-zenblock-white">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-zenblock-electric-blue text-zenblock-white">
+                <thead className="bg-zenblock-leaf-green text-zenblock-white">
                   <tr>
                     <th className="px-6 py-4 text-left font-semibold text-[1rem]">Aspect</th>
                     <th className="px-6 py-4 text-left font-semibold text-[1rem]">Traditional Systems</th>
@@ -99,10 +99,10 @@ const WhyBlockchain = () => {
                 </thead>
                 <tbody>
                   {comparison.map((row, index) => (
-                    <tr key={index} className={index % 2 === 0 ? "bg-zenblock-soft-violet" : "bg-zenblock-white"}>
+                    <tr key={index} className={index % 2 === 0 ? "bg-zenblock-light-gray/30" : "bg-zenblock-white"}>
                       <td className="px-6 py-4 font-medium text-zenblock-primary-text text-[1rem]">{row.aspect}</td>
                       <td className="px-6 py-4 text-zenblock-secondary-text text-[1rem]">{row.traditional}</td>
-                      <td className="px-6 py-4 text-zenblock-electric-blue font-medium text-[1rem]">{row.blockchain}</td>
+                      <td className="px-6 py-4 text-zenblock-leaf-green font-medium text-[1rem]">{row.blockchain}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -113,7 +113,7 @@ const WhyBlockchain = () => {
 
         {/* Hyperledger Fabric Callout */}
         <div>
-          <Card className="bg-gradient-to-r from-zenblock-dark-blue to-zenblock-electric-blue text-zenblock-white">
+          <Card className="bg-gradient-to-r from-zenblock-deep-green to-zenblock-leaf-green text-zenblock-white">
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl lg:text-[2rem] font-bold mb-4">Why Hyperledger Fabric?</h3>
               <p className="text-zenblock-inverse-text/80 mb-6 max-w-3xl mx-auto text-[1rem]">

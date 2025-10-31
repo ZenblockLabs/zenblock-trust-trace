@@ -5,7 +5,7 @@ import { Pill, Leaf, Battery, Gem } from "lucide-react";
 
 const Industries = () => {
   const currentFocus = {
-    icon: <Pill className="w-12 h-12 text-zenblock-electric-blue" />,
+    icon: <Pill className="w-12 h-12 text-zenblock-leaf-green" />,
     title: "Pharmaceuticals",
     description: "Our primary focus is transforming pharmaceutical supply chains across India, UAE, and beyond.",
     compliance: ["DSCSA (US)", "Tatmeen (UAE)", "CDSCO (India)", "GS1 Standards"],
@@ -20,24 +20,24 @@ const Industries = () => {
 
   const futureIndustries = [
     {
-      icon: <Leaf className="w-8 h-8 text-zenblock-pharma-green" />,
+      icon: <Leaf className="w-8 h-8 text-zenblock-leaf-green" />,
       title: "Agriculture",
       description: "Farm-to-table traceability for food safety and organic certification"
     },
     {
-      icon: <Battery className="w-8 h-8 text-zenblock-electric-blue" />,
+      icon: <Battery className="w-8 h-8 text-zenblock-leaf-green" />,
       title: "Battery-as-a-Service",
       description: "Tracking battery lifecycle, performance, and recycling"
     },
     {
-      icon: <Gem className="w-8 h-8 text-zenblock-electric-blue" />,
+      icon: <Gem className="w-8 h-8 text-zenblock-leaf-green" />,
       title: "Luxury Goods",
       description: "Authenticity verification for high-value products"
     }
   ];
 
   return (
-    <section id="industries" className="py-20 bg-zenblock-soft-violet">
+    <section id="industries" className="py-20 bg-zenblock-light-gray/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
@@ -52,13 +52,13 @@ const Industries = () => {
 
         {/* Current Focus - Pharmaceuticals */}
         <div className="mb-16">
-          <Card className="bg-zenblock-white shadow-xl border-2 border-zenblock-electric-blue">
+          <Card className="bg-zenblock-white shadow-xl border-2 border-zenblock-leaf-green">
             <CardHeader className="text-center pb-6">
               <div className="flex justify-center mb-4">
                 {currentFocus.icon}
               </div>
               <CardTitle className="text-3xl text-zenblock-primary-text">{currentFocus.title}</CardTitle>
-              <Badge className="bg-zenblock-electric-blue text-zenblock-white">Current Focus</Badge>
+              <Badge className="bg-zenblock-leaf-green text-zenblock-white">Current Focus</Badge>
             </CardHeader>
             <CardContent className="space-y-8">
               <p className="text-base lg:text-[1rem] text-zenblock-secondary-text text-center">{currentFocus.description}</p>
@@ -68,7 +68,7 @@ const Industries = () => {
                 <h4 className="text-xl font-semibold text-zenblock-primary-text mb-4">Regulatory Compliance</h4>
                 <div className="flex flex-wrap gap-2">
                   {currentFocus.compliance.map((standard, index) => (
-                    <Badge key={index} variant="outline" className="border-zenblock-electric-blue text-zenblock-electric-blue">
+                    <Badge key={index} variant="outline" className="border-zenblock-leaf-green text-zenblock-leaf-green">
                       {standard}
                     </Badge>
                   ))}
@@ -81,7 +81,7 @@ const Industries = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   {currentFocus.benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start space-x-2">
-                      <div className="w-2 h-2 bg-zenblock-electric-blue rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-zenblock-leaf-green rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-zenblock-secondary-text text-[1rem]">{benefit}</span>
                     </div>
                   ))}
@@ -93,17 +93,17 @@ const Industries = () => {
                 <h4 className="text-xl font-semibold text-zenblock-primary-text mb-4">Geographic Focus</h4>
                 <div className="grid md:grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-zenblock-electric-blue mb-1">🇮🇳</div>
+                    <div className="text-2xl font-bold text-zenblock-leaf-green mb-1">🇮🇳</div>
                     <div className="font-semibold text-zenblock-primary-text">India</div>
                     <div className="text-sm text-zenblock-secondary-text">Manufacturing Hub</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-zenblock-electric-blue mb-1">🇦🇪</div>
+                    <div className="text-2xl font-bold text-zenblock-leaf-green mb-1">🇦🇪</div>
                     <div className="font-semibold text-zenblock-primary-text">UAE</div>
                     <div className="text-sm text-zenblock-secondary-text">Distribution Center</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-zenblock-electric-blue mb-1">🌍</div>
+                    <div className="text-2xl font-bold text-zenblock-leaf-green mb-1">🌍</div>
                     <div className="font-semibold text-zenblock-primary-text">Global</div>
                     <div className="text-sm text-zenblock-secondary-text">Expanding Markets</div>
                   </div>

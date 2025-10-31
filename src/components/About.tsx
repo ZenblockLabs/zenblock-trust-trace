@@ -5,22 +5,22 @@ import { Shield, Target, Users, Lightbulb } from "lucide-react";
 const About = () => {
   const values = [
     {
-      icon: <Shield className="w-8 h-8 text-zenblock-electric-blue" />,
+      icon: <Shield className="w-8 h-8 text-zenblock-leaf-green" />,
       title: "Trust",
       description: "Building unshakeable confidence in every transaction"
     },
     {
-      icon: <Target className="w-8 h-8 text-zenblock-electric-blue" />,
+      icon: <Target className="w-8 h-8 text-zenblock-leaf-green" />,
       title: "Transparency",
       description: "Complete visibility across the entire supply chain"
     },
     {
-      icon: <Users className="w-8 h-8 text-zenblock-electric-blue" />,
+      icon: <Users className="w-8 h-8 text-zenblock-leaf-green" />,
       title: "Integrity",
       description: "Honest, ethical practices in everything we do"
     },
     {
-      icon: <Lightbulb className="w-8 h-8 text-zenblock-electric-blue" />,
+      icon: <Lightbulb className="w-8 h-8 text-zenblock-leaf-green" />,
       title: "Innovation",
       description: "Cutting-edge technology for tomorrow's challenges"
     }
@@ -48,7 +48,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-zenblock-soft-violet">
+    <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
@@ -66,19 +66,19 @@ const About = () => {
         <div className="mb-16">
           <h3 className="text-3xl lg:text-[2rem] font-bold text-center text-zenblock-primary-text mb-12">The Problem We Solve</h3>
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="bg-zenblock-white shadow-lg border border-yellow-200">
+            <Card className="bg-zenblock-white shadow-lg border border-zenblock-light-gray">
               <CardContent className="p-6 text-center">
                 <h4 className="font-bold text-zenblock-primary-text mb-2 text-[1.125rem]">Counterfeiting</h4>
                 <p className="text-zenblock-secondary-text text-[1rem]">$200B+ annual losses from fake pharmaceuticals globally</p>
               </CardContent>
             </Card>
-            <Card className="bg-zenblock-white shadow-lg border border-yellow-200">
+            <Card className="bg-zenblock-white shadow-lg border border-zenblock-light-gray">
               <CardContent className="p-6 text-center">
                 <h4 className="font-bold text-zenblock-primary-text mb-2 text-[1.125rem]">Compliance Gaps</h4>
                 <p className="text-zenblock-secondary-text text-[1rem]">Complex regulatory requirements across multiple jurisdictions</p>
               </CardContent>
             </Card>
-            <Card className="bg-zenblock-white shadow-lg border border-yellow-200">
+            <Card className="bg-zenblock-white shadow-lg border border-zenblock-light-gray">
               <CardContent className="p-6 text-center">
                 <h4 className="font-bold text-zenblock-primary-text mb-2 text-[1.125rem]">Fragmentation</h4>
                 <p className="text-zenblock-secondary-text text-[1rem]">Lack of visibility and coordination across supply chain partners</p>
@@ -111,7 +111,7 @@ const About = () => {
           <div className="space-y-6">
             {milestones.map((milestone, index) => (
               <div key={index} className="flex items-start space-x-4 animate-slide-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="flex-shrink-0 w-16 h-16 bg-zenblock-electric-blue text-zenblock-white rounded-full flex items-center justify-center font-bold">
+                <div className="flex-shrink-0 w-16 h-16 bg-zenblock-leaf-green text-zenblock-white rounded-full flex items-center justify-center font-bold">
                   {milestone.year}
                 </div>
                 <div>
@@ -128,16 +128,16 @@ const About = () => {
           <h3 className="text-3xl lg:text-[2rem] font-bold text-center text-zenblock-primary-text mb-12">Meet Our Core Team</h3>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="bg-zenblock-white card-hover border border-zenblock-soft-violet">
+              <Card key={index} className="bg-zenblock-white card-hover border border-zenblock-light-gray">
                 <CardContent className="p-6">
                   <div className="flex flex-col items-center text-center mb-4">
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-24 h-24 rounded-full object-cover mb-4 border-3 border-zenblock-electric-blue"
+                      className="w-24 h-24 rounded-full object-cover mb-4 border-3 border-zenblock-leaf-green"
                     />
                     <h4 className="text-xl font-bold text-zenblock-primary-text mb-1">{member.name}</h4>
-                    <h5 className="text-md font-semibold text-zenblock-electric-blue mb-3">{member.role}</h5>
+                    <h5 className="text-md font-semibold text-zenblock-leaf-green mb-3">{member.role}</h5>
                   </div>
                   <p className="text-zenblock-secondary-text text-sm text-center">{member.background}</p>
                 </CardContent>
