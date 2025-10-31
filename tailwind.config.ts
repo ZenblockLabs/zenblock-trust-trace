@@ -67,17 +67,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				zenblock: {
-					'dark-blue': '#1B1F3B',
-					'white': '#FFFFFF',
-					'soft-violet': '#CDC6E7',
-					'electric-blue': '#2EC4F1',
-					'pharma-green': '#2EC4F1',
-					'soft-mint': '#D6F5E3',
-					'primary-text': '#1C1C1C',
-					'secondary-text': '#4A4A4A',
-					'inverse-text': '#F2F2F2'
-				}
+			zenblock: {
+				'deep-green': '#002D00',
+				'leaf-green': '#4E9013',
+				'light-green': '#AED581',
+				'white': '#FFFFFF',
+				'light-gray': '#CFCFCF',
+				'primary-text': '#002D00',
+				'secondary-text': '#4A4A4A',
+				'inverse-text': '#FFFFFF'
+			}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
