@@ -27,9 +27,9 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: "2024", title: "MVP Completed", description: "Successfully developed and tested our blockchain traceability platform" },
-    { year: "2024", title: "Pilot Outreach", description: "Engaging with pharmaceutical companies across India and UAE" },
-    { year: "2025", title: "Regulatory Partnerships", description: "Building relationships with Tatmeen, FDA, and CDSCO" }
+    { year: "2025", title: "MVP Completed", description: "Successfully developed and tested our blockchain traceability platform" },
+    { year: "2025", title: "Pilot Outreach", description: "Engaging with pharmaceutical companies across India and UAE" },
+    { year: "2026", title: "Regulatory Partnerships", description: "Building relationships with Tatmeen, FDA, and CDSCO" }
   ];
 
   const teamMembers = [
