@@ -122,7 +122,7 @@ const Navigation = () => {
                   <NavigationMenuTrigger className="text-zenblock-charcoal hover:text-zenblock-fresh-green px-4 py-2 text-[0.95rem] font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent" style={{ fontWeight: 500 }}>
                     About
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-white rounded-xl border border-zenblock-border-grey shadow-lg p-4 w-[280px]">
+                  <NavigationMenuContent className="absolute left-0 top-full bg-white rounded-xl border border-zenblock-border-grey shadow-lg p-4 w-[280px] mt-2">
                     {aboutDropdown.map((item) => (
                       <NavigationMenuLink key={item.title} asChild>
                         <button
@@ -146,7 +146,7 @@ const Navigation = () => {
                   <NavigationMenuTrigger className="text-zenblock-charcoal hover:text-zenblock-fresh-green px-4 py-2 text-[0.95rem] font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent" style={{ fontWeight: 500 }}>
                     Solutions
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-white rounded-xl border border-zenblock-border-grey shadow-lg p-4 w-[280px]">
+                  <NavigationMenuContent className="absolute left-0 top-full bg-white rounded-xl border border-zenblock-border-grey shadow-lg p-4 w-[280px] mt-2">
                     {solutionsDropdown.map((item) => (
                       <NavigationMenuLink key={item.title} asChild>
                         <button
@@ -170,7 +170,7 @@ const Navigation = () => {
                   <NavigationMenuTrigger className="text-zenblock-charcoal hover:text-zenblock-fresh-green px-4 py-2 text-[0.95rem] font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent" style={{ fontWeight: 500 }}>
                     Industries
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-white rounded-xl border border-zenblock-border-grey shadow-lg p-4 w-[280px]">
+                  <NavigationMenuContent className="absolute left-0 top-full bg-white rounded-xl border border-zenblock-border-grey shadow-lg p-4 w-[280px] mt-2">
                     {industriesDropdown.map((item) => (
                       <NavigationMenuLink key={item.title} asChild>
                         <button
@@ -194,7 +194,7 @@ const Navigation = () => {
                   <NavigationMenuTrigger className="text-zenblock-charcoal hover:text-zenblock-fresh-green px-4 py-2 text-[0.95rem] font-medium bg-transparent hover:bg-transparent data-[state=open]:bg-transparent" style={{ fontWeight: 500 }}>
                     Compliance
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-white rounded-xl border border-zenblock-border-grey shadow-lg p-4 w-[280px]">
+                  <NavigationMenuContent className="absolute left-0 top-full bg-white rounded-xl border border-zenblock-border-grey shadow-lg p-4 w-[280px] mt-2">
                     {complianceDropdown.map((item) => (
                       <NavigationMenuLink key={item.title} asChild>
                         <button
