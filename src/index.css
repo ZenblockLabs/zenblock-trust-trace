@@ -104,7 +104,7 @@
 
 @layer components {
   .hero-gradient {
-    background: linear-gradient(135deg, #002D00 0%, #4E9013 100%);
+    background: linear-gradient(135deg, #FFFFFF 0%, #F0F7EB 100%);
   }
   
   .card-hover {
