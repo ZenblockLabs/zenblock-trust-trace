@@ -44,12 +44,14 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { href: "home", label: "Home" },
-    { href: "about", label: "About" },
-    { href: "solution", label: "Solution" },
-    { href: "industries", label: "Industries" },
-    { href: "compliance", label: "Compliance" },
-    { href: "contact", label: "Contact" },
+    { href: "home", label: "Home", isSection: true },
+    { href: "about", label: "About", isSection: true },
+    { href: "solution", label: "Solution", isSection: true },
+    { href: "/solutions", label: "Full Solutions", isSection: false },
+    { href: "/team", label: "Leadership", isSection: false },
+    { href: "industries", label: "Industries", isSection: true },
+    { href: "compliance", label: "Compliance", isSection: true },
+    { href: "contact", label: "Contact", isSection: true },
   ];
 
   return (
@@ -76,7 +78,7 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <button
                   key={item.href}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => item.isSection ? scrollToSection(item.href) : navigate(item.href)}
                   className="text-zenblock-charcoal hover:text-zenblock-professional-green px-3 py-2 rounded-md text-[1rem] font-medium transition-colors duration-200"
                 >
                   {item.label}
@@ -115,7 +117,7 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <button
                   key={item.href}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => item.isSection ? scrollToSection(item.href) : navigate(item.href)}
                   className="text-zenblock-charcoal hover:text-zenblock-professional-green block px-4 py-3 rounded-md text-[1rem] font-medium w-full text-left min-h-[44px]"
                 >
                   {item.label}
