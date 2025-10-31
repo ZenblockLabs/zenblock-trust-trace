@@ -254,7 +254,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-zenblock-border-grey">
+          <div className="lg:hidden border-t border-zenblock-border-grey max-h-[calc(100vh-80px)] overflow-y-auto">
             <div className="px-4 pt-4 pb-6 space-y-2 bg-white">
               {/* Home */}
               <button
