@@ -10,7 +10,7 @@ const ContactInfo = () => (
         </div>
         <div>
           <h3 className="text-xl font-semibold text-zenblock-charcoal">Phone</h3>
-          <p className="text-zenblock-medium-grey">+91 9059392438</p>
+          <p className="text-zenblock-medium-grey">+91 9032965988</p>
         </div>
       </div>
       <div className="flex items-center gap-4">
@@ -19,7 +19,7 @@ const ContactInfo = () => (
         </div>
         <div>
           <h3 className="text-xl font-semibold text-zenblock-charcoal">Email</h3>
-          <p className="text-zenblock-medium-grey">info@zenblocklabs.com</p>
+          <p className="text-zenblock-medium-grey">zenblocklabs@gmail.com</p>
         </div>
       </div>
       <div className="flex items-center gap-4">
@@ -38,7 +38,7 @@ const ContactInfo = () => (
         <div>
           <h3 className="text-xl font-semibold text-zenblock-charcoal">LinkedIn</h3>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/company/zenblock-labs" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-zenblock-professional-green hover:text-zenblock-fresh-green transition-colors"
