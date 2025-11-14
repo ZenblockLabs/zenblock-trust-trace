@@ -36,31 +36,76 @@ const Defence = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-20 bg-gradient-to-br from-zenblock-deep-forest via-zenblock-charcoal to-zenblock-deep-forest animate-fade-in">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <div className="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <p className="text-zenblock-mint-whisper font-semibold">Zenblock Labs · Defence</p>
+      <section className="bg-gradient-to-b from-zenblock-mint-whisper to-zenblock-pure-white min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="animate-fade-in space-y-6 sm:space-y-8 pt-24 sm:pt-28 md:pt-32">
+            <div className="inline-block mb-4 px-4 py-2 bg-zenblock-professional-green/10 backdrop-blur-sm rounded-full border border-zenblock-professional-green/20">
+              <p className="text-zenblock-professional-green font-semibold">Zenblock Labs · Defence</p>
             </div>
-            <p className="text-xl text-white/80 mb-8">
-              Tamper-proof provenance for mission-critical defence manufacturing.
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Trust Where Lives Depend On It.
+            
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-zenblock-charcoal mb-4 sm:mb-6 leading-tight">
+              <span className="flex flex-col space-y-2 sm:space-y-4 md:space-y-6">
+                <span>Trust Where</span>
+                <span className="text-zenblock-professional-green">
+                  Lives Depend On It
+                </span>
+              </span>
             </h1>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+            
+            <p className="text-base sm:text-lg md:text-xl lg:text-[1.25rem] text-zenblock-medium-grey mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
               Zenblock Labs brings defence-grade traceability, provenance, and indigenisation proof to India's aerospace and defence supply chains. Built on secure, permissioned blockchain — engineered for on-prem, air-gapped facilities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-zenblock-professional-green hover:bg-zenblock-fresh-green text-white shadow-lg hover:shadow-xl transition-all">
+            
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4 sm:px-0">
+              <Button 
+                size="lg" 
+                className="bg-zenblock-professional-green text-white hover:bg-zenblock-fresh-green hover:scale-105 text-base sm:text-[1rem] px-6 sm:px-8 rounded-full font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 w-full sm:w-auto min-h-[44px] sm:min-h-[56px]"
+              >
                 Explore Defence Solutions
               </Button>
-              <Button size="lg" variant="outline" onClick={scrollToForm} className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-zenblock-deep-forest transition-all">
+              
+              <Button 
+                size="lg" 
+                onClick={scrollToForm}
+                variant="outline"
+                className="border-2 border-zenblock-professional-green text-zenblock-professional-green hover:bg-zenblock-mint-whisper text-base sm:text-[1rem] px-6 sm:px-8 rounded-full font-semibold transition-all duration-300 w-full sm:w-auto min-h-[44px] sm:min-h-[56px]"
+              >
                 Request a Pilot Demo
               </Button>
+            </div>
+            
+            <div className="bg-zenblock-mint-whisper border border-zenblock-border-grey rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto px-4 sm:px-0">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+                <div className="text-center group hover:scale-105 transition-transform duration-300">
+                  <div className="flex justify-center mb-3">
+                    <div className="p-3 bg-zenblock-professional-green/10 rounded-full group-hover:bg-zenblock-professional-green/20 transition-colors duration-300">
+                      <Shield className="w-6 h-6 text-zenblock-professional-green" />
+                    </div>
+                  </div>
+                  <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2 animate-fade-in">100%</div>
+                  <div className="text-zenblock-medium-grey text-xs sm:text-sm">Tamper-Proof Provenance</div>
+                </div>
+                
+                <div className="text-center group hover:scale-105 transition-transform duration-300">
+                  <div className="flex justify-center mb-3">
+                    <div className="p-3 bg-zenblock-professional-green/10 rounded-full group-hover:bg-zenblock-professional-green/20 transition-colors duration-300">
+                      <Lock className="w-6 h-6 text-zenblock-professional-green" />
+                    </div>
+                  </div>
+                  <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2 animate-fade-in" style={{ animationDelay: '0.1s' }}>On-Prem</div>
+                  <div className="text-zenblock-medium-grey text-xs sm:text-sm">Air-Gapped Deployment</div>
+                </div>
+                
+                <div className="text-center group hover:scale-105 transition-transform duration-300">
+                  <div className="flex justify-center mb-3">
+                    <div className="p-3 bg-zenblock-professional-green/10 rounded-full group-hover:bg-zenblock-professional-green/20 transition-colors duration-300">
+                      <CheckCircle2 className="w-6 h-6 text-zenblock-professional-green" />
+                    </div>
+                  </div>
+                  <div className="text-2xl sm:text-3xl lg:text-[1.5rem] font-bold text-zenblock-deep-forest mb-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>DAP 2020</div>
+                  <div className="text-zenblock-medium-grey text-xs sm:text-sm">Compliance Ready</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
