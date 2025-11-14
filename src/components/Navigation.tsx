@@ -213,6 +213,18 @@ const Navigation = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
+                {/* Defence */}
+                <NavigationMenuItem>
+                  <button
+                    onClick={() => navigate('/defence')}
+                    className="text-zenblock-charcoal hover:text-zenblock-fresh-green px-4 py-2 text-[0.95rem] font-medium transition-colors duration-200 relative group"
+                    style={{ fontWeight: 500 }}
+                  >
+                    Defence
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-zenblock-professional-green scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                  </button>
+                </NavigationMenuItem>
+
                 {/* Contact */}
                 <NavigationMenuItem>
                   <button
@@ -328,6 +340,15 @@ const Navigation = () => {
                   </button>
                 ))}
               </div>
+
+              {/* Defence */}
+              <button
+                onClick={() => { navigate('/defence'); setIsMenuOpen(false); }}
+                className="text-zenblock-charcoal hover:text-zenblock-professional-green block px-4 py-3 rounded-lg text-[1rem] font-medium w-full text-left"
+                style={{ fontWeight: 500 }}
+              >
+                Defence
+              </button>
 
               {/* Contact */}
               <button
