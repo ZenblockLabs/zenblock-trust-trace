@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import emailjs from "emailjs-com";
+import { supabase } from "@/integrations/supabase/client";
 import ContactInfo from "./ContactInfo";
 
 // Tailwind class to ensure placeholder text is dark grey
@@ -19,63 +19,43 @@ const Contact = () => {
   const [showErrorModal, setShowErrorModal] = useState(false); // For required fields error
   const [emailJsError, setEmailJsError] = useState(false); // For actual EmailJS sending errors
 
-  const handlesubmit = (e) => {
+  const handlesubmit = async (e) => {
     e.preventDefault();
 
     // Check for required fields before attempting to send email
     if (!name || !email || !message) {
-      setShowErrorModal(true); // This will trigger the "Please fill all required fields" modal
+      setShowErrorModal(true);
       return;
     }
 
     setIsSubmitting(true);
-    setEmailJsError(false); // Reset any previous EmailJS error
+    setEmailJsError(false);
 
-    // --- YOUR ACTUAL EMAILJS CODE GOES HERE ---
-    const serviceID = 'service_f0wpovg'
-    const templateID = 'template_5bzcqpr'
-    const publicKey = 'F8ptJ0I7OpktorsD-'
-
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      company: company,
-      to_name: "ZenBlock Team",
-      message: message,
-    };
-
-    emailjs
-      .send(serviceID, templateID, templateParams, publicKey)
-      .then((response) => {
-        console.log("Email sent!", response.status, response.text);
-        setShowSuccessModal(true);
-        setName("");
-        setEmail("");
-        setCompany("");
-        setMessage("");
-      })
-      .catch((error) => {
-        console.error("Failed to send email:", error);
-        setEmailJsError(true); // Set state for EmailJS error
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name,
+          email,
+          company,
+          message,
+          formType: 'contact'
+        }
       });
 
-    // --- END OF ACTUAL EMAILJS CODE ---
+      if (error) throw error;
 
-    // Remove or comment out the setTimeout simulation once EmailJS is active
-    /*
-    setTimeout(() => {
       console.log("Email sent successfully!");
       setShowSuccessModal(true);
       setName("");
       setEmail("");
       setCompany("");
       setMessage("");
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      setEmailJsError(true);
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
-    */
+    }
   };
 
   const closeModal = () => {
