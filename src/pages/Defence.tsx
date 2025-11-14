@@ -7,9 +7,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Shield, Eye, CheckCircle2, Lock, Database, Wifi, Zap, Tag, FileCheck, Server, Key, FileText, Plane, Rocket, Cpu, Cog, Layers, RotateCw } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Defence = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     organisation: "",
@@ -22,13 +24,38 @@ const Defence = () => {
     document.getElementById("pilot-form")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Request Submitted",
-      description: "We'll contact you shortly to discuss your pilot program.",
-    });
-    setFormData({ name: "", organisation: "", email: "", phone: "", useCase: "" });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          company: formData.organisation,
+          message: `Phone: ${formData.phone}\n\nUse Case:\n${formData.useCase}`,
+          formType: 'pilot'
+        }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Request Submitted",
+        description: "We'll contact you shortly to discuss your pilot program at zenblocklabs@gmail.com.",
+      });
+      setFormData({ name: "", organisation: "", email: "", phone: "", useCase: "" });
+    } catch (error) {
+      console.error("Error submitting pilot request:", error);
+      toast({
+        title: "Failed to Submit",
+        description: "Sorry, something went wrong. Please try again or email us at zenblocklabs@gmail.com.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -410,8 +437,8 @@ const Defence = () => {
                     className="min-h-[120px]"
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-all">
-                  Request Pilot
+                <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-all">
+                  {isSubmitting ? "Submitting..." : "Request Pilot"}
                 </Button>
               </form>
             </CardContent>

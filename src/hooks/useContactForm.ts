@@ -1,15 +1,6 @@
-
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from "emailjs-com";
-
-// EmailJS credentials -- replace with your own
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-
-// Zapier webhook - you can set your Zap URL here, leave empty to skip
-const ZAPIER_WEBHOOK_URL = ""; // e.g., "https://hooks.zapier.com/hooks/catch/XXX/YYY/"
+import { supabase } from "@/integrations/supabase/client";
 
 export const useContactForm = () => {
   const [formData, setFormData] = useState({
@@ -21,71 +12,39 @@ export const useContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Handles form submission: send to Zapier webhook and EmailJS
+  // Handles form submission: send via Resend edge function
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // 1. Send data to Zapier webhook (if URL provided)
-    if (ZAPIER_WEBHOOK_URL) {
-      try {
-        await fetch(ZAPIER_WEBHOOK_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          mode: "no-cors", // allows fetch even if Zapier doesn't send CORS headers
-          body: JSON.stringify({
-            ...formData,
-            timestamp: new Date().toISOString()
-          })
-        });
-        toast({
-          title: "Zapier Webhook Triggered",
-          description: "Your message was also sent to Zapier for further automation.",
-          className: "bg-zenblock-soft-mint border-zenblock-electric-blue text-zenblock-primary-text",
-        });
-      } catch (err) {
-        toast({
-          title: "Zapier Webhook Failed",
-          description: "We couldn't trigger the Zapier automation. Email delivery will still be attempted.",
-          className: "bg-red-100 border-red-500 text-red-700",
-        });
-      }
-    }
-
-    // 2. Send with EmailJS as normal
-    emailjs
-      .send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
           company: formData.company,
           message: formData.message,
-        },
-        EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          toast({
-            title: "Message Sent!",
-            description: "Thank you for contacting us. We will get back to you at info@zenblocklabs.com.",
-            className: "bg-zenblock-soft-mint border-zenblock-electric-blue text-zenblock-primary-text",
-          });
-          setFormData({ name: "", email: "", company: "", message: "" });
-        },
-        (error) => {
-          console.error("EmailJS error:", error);
-          toast({
-            title: "Failed to Send",
-            description: "Sorry, something went wrong. Please try again later or email us directly at info@zenblocklabs.com.",
-            className: "bg-red-100 border-red-500 text-red-700",
-          });
+          formType: 'contact'
         }
-      )
-      .finally(() => setIsSubmitting(false));
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for contacting us. We will get back to you soon at zenblocklabs@gmail.com.",
+      });
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Failed to Send",
+        description: "Sorry, something went wrong. Please try again later or email us directly at zenblocklabs@gmail.com.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
