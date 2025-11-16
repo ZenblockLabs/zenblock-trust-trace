@@ -1,9 +1,17 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Pill, Leaf, Gem, CheckCircle2 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import pharmaManufacturing from "@/assets/pharma-manufacturing.jpg";
+import agricultureTech from "@/assets/agriculture-tech.jpg";
+import luxuryGoods from "@/assets/luxury-goods.jpg";
 
 const Industries = () => {
+  const industryImages: Record<string, string> = {
+    pharma: pharmaManufacturing,
+    agri: agricultureTech,
+    luxury: luxuryGoods,
+  };
+
   const industries = [
     {
       id: "pharma",
@@ -75,6 +83,7 @@ const Industries = () => {
             <TabsContent key={industry.id} value={industry.id}>
               <Card className="bg-white border border-zenblock-border-grey">
                 <CardContent className="p-8">
+                  <img src={industryImages[industry.id]} alt={`${industry.name} industry visual`} className="w-full h-56 md:h-72 object-cover rounded-xl border border-zenblock-border-grey mb-6" loading="lazy" />
                   <div className="flex items-start gap-4 mb-6">
                     <div className="flex-shrink-0">
                       <industry.icon className="w-12 h-12 text-zenblock-professional-green" strokeWidth={1.5} />
