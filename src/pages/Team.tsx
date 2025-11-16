@@ -16,6 +16,12 @@ const Team = () => {
       role: "Financial Consultant, Zenblock Labs", 
       background: "B.Com | 30 Years in Real Estate & Financial Advisory. A seasoned financial consultant bringing deep insight into financial structuring and regulatory navigation.",
       image: "/lovable-uploads/744df5bf-e5ef-42ca-b1d4-cd35bc74a88e.png"
+    },
+    {
+      name: "Alex Morgan",
+      role: "Lead UI/UX Designer, Zenblock Labs",
+      background: "15+ Years Crafting Exceptional User Experiences. Award-winning designer with expertise in user-centered design, design systems, and digital product strategy. Previously led design teams at Fortune 500 companies.",
+      image: "/lovable-uploads/designer-headshot.png"
     }
   ];
 
