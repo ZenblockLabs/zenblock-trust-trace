@@ -1,7 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Package, Truck, Store, User, Activity, Smartphone, ArrowRight, FileCheck } from "lucide-react";
-import supplyChainFlow from "@/assets/supply-chain-flow.jpg";
 
 const Solution = () => {
   const scrollToContact = () => {
@@ -54,9 +53,6 @@ const Solution = () => {
         {/* Blockchain in Motion Visual */}
         <div className="mb-16 bg-white rounded-2xl p-8 border border-zenblock-border-grey">
           <h3 className="text-2xl font-bold text-zenblock-deep-forest mb-6 text-center">Blockchain in Motion</h3>
-          <div className="mb-8">
-            <img src={supplyChainFlow} alt="End-to-end blockchain supply chain flow" className="w-full h-64 md:h-80 object-cover rounded-xl border border-zenblock-border-grey" loading="lazy" />
-          </div>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-lg bg-zenblock-professional-green/10 flex items-center justify-center">
