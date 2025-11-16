@@ -1,6 +1,6 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Target, Users, Lightbulb } from "lucide-react";
+import pharmaLab from "@/assets/pharma-lab.jpg";
 
 const About = () => {
   const values = [
@@ -37,6 +37,10 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-zenblock-deep-forest mb-4 sm:mb-6">Why Zenblock Exists</h2>
+        </div>
+
+        <div className="mb-10">
+          <img src={pharmaLab} alt="Modern pharmaceutical laboratory" className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl border border-zenblock-border-grey" loading="lazy" />
         </div>
 
         <div className="mb-12 sm:mb-16">

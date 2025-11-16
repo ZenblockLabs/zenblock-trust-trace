@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Eye, Handshake, Lock, CheckCircle2, Database, Network, Key, Zap } from "lucide-react";
+import hyperledgerArch from "@/assets/hyperledger-architecture.jpg";
 
 const Technology = () => {
   const benefits = [
@@ -86,6 +87,10 @@ const Technology = () => {
             <p className="text-xl text-zenblock-medium-grey max-w-3xl mx-auto">
               Understanding the blockchain technology that powers trust and transparency in supply chains
             </p>
+          </div>
+
+          <div className="mb-10">
+            <img src={hyperledgerArch} alt="Permissioned blockchain architecture diagram" className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl border border-zenblock-border-grey" loading="lazy" />
           </div>
 
           {/* Why Blockchain */}

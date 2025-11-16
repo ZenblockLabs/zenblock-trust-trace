@@ -2,6 +2,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
+import pharmaLab from "@/assets/pharma-lab.jpg";
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -45,6 +46,8 @@ const CaseStudies = () => {
               supply chains with Zenblock Labs' blockchain solutions.
             </p>
           </div>
+
+          <img src={pharmaLab} alt="Pharmaceutical supply chain operations" className="w-full h-56 md:h-72 object-cover rounded-xl border border-zenblock-border-grey mb-8" loading="lazy" />
 
           <div className="space-y-12">
             {caseStudies.map((study, index) => (
