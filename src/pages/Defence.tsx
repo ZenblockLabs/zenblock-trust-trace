@@ -65,8 +65,8 @@ const Defence = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <img src={defenceHero} alt="Aerospace and defence supply chain" className="absolute inset-0 w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white/90" />
+        <img src={defenceHero} alt="Aerospace and defence supply chain" className="absolute inset-0 w-full h-full object-cover opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-white/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in space-y-6 sm:space-y-8 pt-24 sm:pt-28 md:pt-32">
             <div className="inline-block mb-4 px-4 py-2 bg-zenblock-professional-green/10 backdrop-blur-sm rounded-full border border-zenblock-professional-green/20">
