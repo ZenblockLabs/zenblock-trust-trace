@@ -1,4 +1,5 @@
 
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,6 +7,11 @@ import { Card, CardContent } from "@/components/ui/card";
 const TermsOfService = () => {
   return (
     <div className="min-h-screen bg-zenblock-white">
+      <SEOHead 
+        title="Terms of Service | Zenblock Labs"
+        description="Terms of service for Zenblock Labs blockchain traceability platform. Read our terms and conditions."
+        canonical="https://www.zenblocklabs.com/terms-of-service"
+      />
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

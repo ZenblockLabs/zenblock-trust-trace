@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -78,6 +79,11 @@ const Solutions = () => {
 
   return (
     <div className="min-h-screen bg-zenblock-pure-white">
+      <SEOHead 
+        title="Blockchain Supply Chain Solutions | Zenblock Labs"
+        description="Complete blockchain traceability platform for regulated supply chains. Product serialization, track & trace, counterfeit detection, and regulatory compliance."
+        canonical="https://www.zenblocklabs.com/solutions"
+      />
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

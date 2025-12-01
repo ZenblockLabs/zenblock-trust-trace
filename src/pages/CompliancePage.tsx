@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -87,6 +88,11 @@ const CompliancePage = () => {
 
   return (
     <div className="min-h-screen bg-zenblock-pure-white">
+      <SEOHead 
+        title="Global Compliance & Regulatory Standards | Zenblock Labs"
+        description="Blockchain compliance solutions for FDA, CDSCO, Tatmeen, GS1, DSCSA, EU FMD, and more. Meet global pharmaceutical and supply chain regulations."
+        canonical="https://www.zenblocklabs.com/compliance"
+      />
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

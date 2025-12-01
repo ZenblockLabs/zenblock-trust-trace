@@ -83,7 +83,7 @@ const Industries = () => {
             <TabsContent key={industry.id} value={industry.id}>
               <Card className="bg-white border border-zenblock-border-grey">
                 <CardContent className="p-8">
-                  <img src={industryImages[industry.id]} alt={`${industry.name} industry visual`} className="w-full h-56 md:h-72 object-cover rounded-xl border border-zenblock-border-grey mb-6" loading="lazy" />
+                  <img src={industryImages[industry.id]} alt={`${industry.name} blockchain supply chain traceability and anti-counterfeit verification solution`} className="w-full h-56 md:h-72 object-cover rounded-xl border border-zenblock-border-grey mb-6" loading="lazy" />
                   <div className="flex items-start gap-4 mb-6">
                     <div className="flex-shrink-0">
                       <industry.icon className="w-12 h-12 text-zenblock-professional-green" strokeWidth={1.5} />

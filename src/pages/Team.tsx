@@ -1,4 +1,5 @@
 
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,6 +28,11 @@ const Team = () => {
 
   return (
     <div className="min-h-screen bg-zenblock-pure-white">
+      <SEOHead 
+        title="Leadership Team | Zenblock Labs"
+        description="Meet the leadership team at Zenblock Labs. Experts in blockchain technology, supply chain management, and regulatory compliance."
+        canonical="https://www.zenblocklabs.com/team"
+      />
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

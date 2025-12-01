@@ -40,7 +40,7 @@ const About = () => {
         </div>
 
         <div className="mb-10">
-          <img src={pharmaLab} alt="Modern pharmaceutical laboratory" className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl border border-zenblock-border-grey" loading="lazy" />
+          <img src={pharmaLab} alt="Pharmaceutical blockchain traceability platform laboratory environment with quality control and regulatory compliance" className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl border border-zenblock-border-grey" loading="lazy" />
         </div>
 
         <div className="mb-12 sm:mb-16">

@@ -1,4 +1,5 @@
 
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -33,6 +34,11 @@ const News = () => {
 
   return (
     <div className="min-h-screen bg-zenblock-white">
+      <SEOHead 
+        title="News & Updates | Zenblock Labs"
+        description="Latest news and updates from Zenblock Labs. Stay informed about blockchain traceability innovations and partnership announcements."
+        canonical="https://www.zenblocklabs.com/news"
+      />
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
