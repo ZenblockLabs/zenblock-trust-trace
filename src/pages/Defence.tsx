@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -61,11 +62,16 @@ const Defence = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Defence Supply Chain Traceability | Zenblock Labs"
+        description="Blockchain-powered procurement audit trails for aerospace and defence. Indigenisation compliance, DGQA-ready verification, secure on-premise deployment."
+        canonical="https://www.zenblocklabs.com/defence"
+      />
       <Navigation />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <img src={defenceHero} alt="Aerospace and defence supply chain" className="absolute inset-0 w-full h-full object-cover opacity-50" />
+        <img src={defenceHero} alt="Defence aerospace supply chain blockchain traceability and procurement audit verification platform" className="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-white/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in space-y-6 sm:space-y-8 pt-24 sm:pt-28 md:pt-32">

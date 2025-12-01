@@ -1,4 +1,5 @@
 
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -34,6 +35,11 @@ const CaseStudies = () => {
 
   return (
     <div className="min-h-screen bg-zenblock-white">
+      <SEOHead 
+        title="Case Studies - Blockchain Supply Chain Success Stories | Zenblock Labs"
+        description="Real-world blockchain traceability implementations in pharmaceutical manufacturing and distribution. Learn how companies achieve compliance and prevent counterfeits."
+        canonical="https://www.zenblocklabs.com/case-studies"
+      />
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

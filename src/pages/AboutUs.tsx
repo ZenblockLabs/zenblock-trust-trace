@@ -1,4 +1,5 @@
 
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -53,6 +54,11 @@ const AboutUs = () => {
 
   return (
     <div className="min-h-screen bg-zenblock-white">
+      <SEOHead 
+        title="About Zenblock Labs - Blockchain Supply Chain Experts"
+        description="Meet the team behind Zenblock Labs. Experts in blockchain technology, supply chain management, and regulatory compliance for pharma, defence, and luxury industries."
+        canonical="https://www.zenblocklabs.com/about-us"
+      />
       <Navigation />
       <div className="pt-20 pb-16">
         {/* Intro Section */}

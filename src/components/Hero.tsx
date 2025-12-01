@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <img src={heroBg} alt="Blockchain network for pharmaceutical supply chains" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+      <img src={heroBg} alt="Enterprise Hyperledger Fabric blockchain network for pharma supply chain verification and traceability" className="absolute inset-0 w-full h-full object-cover opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white/90" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in space-y-6 sm:space-y-8 pt-24 sm:pt-28 md:pt-32">

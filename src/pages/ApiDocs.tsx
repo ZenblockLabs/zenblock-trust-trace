@@ -1,4 +1,5 @@
 
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,6 +28,11 @@ const ApiDocs = () => {
 
   return (
     <div className="min-h-screen bg-zenblock-white">
+      <SEOHead 
+        title="API Documentation | Zenblock Labs"
+        description="Comprehensive API documentation for Zenblock Labs blockchain traceability platform. Integration guides, endpoints, and technical specifications."
+        canonical="https://www.zenblocklabs.com/api-docs"
+      />
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

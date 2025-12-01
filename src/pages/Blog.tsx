@@ -1,4 +1,5 @@
 
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -30,6 +31,11 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-zenblock-white">
+      <SEOHead 
+        title="Blockchain Supply Chain Blog | Zenblock Labs"
+        description="Latest insights on blockchain technology, supply chain traceability, pharmaceutical compliance, and industry trends from Zenblock Labs experts."
+        canonical="https://www.zenblocklabs.com/blog"
+      />
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

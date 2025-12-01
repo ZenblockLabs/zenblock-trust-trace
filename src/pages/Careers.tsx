@@ -1,4 +1,5 @@
 
+import SEOHead from "@/components/SEOHead";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -31,6 +32,11 @@ const Careers = () => {
 
   return (
     <div className="min-h-screen bg-zenblock-white">
+      <SEOHead 
+        title="Careers at Zenblock Labs - Join Our Blockchain Team"
+        description="Join Zenblock Labs in building the future of supply chain traceability. Open positions in blockchain development, compliance, and business development."
+        canonical="https://www.zenblocklabs.com/careers"
+      />
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
